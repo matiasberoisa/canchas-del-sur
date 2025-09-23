@@ -6,7 +6,7 @@ header {
     background-color: rgb(1 153 74);
     padding: 1rem;
     display: flex;
-    
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 12px 0px;
     justify-content: space-between;
     align-items: center;
 
@@ -71,30 +71,41 @@ button {
     justify-content: space-between;
     align-items: center;
     margin: 1rem;
-
+    gap: 1rem;
 }
 
 .services {
-    border: 0px solid rgb(1 153 74);
+    position: relative;
     width: 400px; 
     height: 200px;
     transition: 0.4ms;
     cursor: pointer;
-    &:hover {
-        transform: scale(1.1);
-        background-color: rgb(1 153 74) ;
-        color: white;
-    }
-    
+    background-size: cover;       /* hace que la imagen cubra todo */
+    background-position: center;  /* centra la imagen */
 }
 
-.services + .service-text {
-    text-align: center;
-    margin-top: 10px;
+.F5 { background-image: url('../utils/f5.png'); 
+    &:hover {
+    transform: scale(1.05);
+    background-image: url('../utils/futbol 5.gif');
+    }
+}
+.F8 { background-image: url('../utils/F8.png'); 
+    &:hover {
+    transform: scale(1.05);
+    background-image: url('../utils/futbol 8.gif');
+    }
+}
+
+.F11 { background-image: url('../utils/F11.png'); 
+    &:hover {
+        transform: scale(1.05);
+        background-image: url('../utils/futbol 11.gif');
+    }
 }
 
 footer {
-    background-color: rgb(0, 99, 48);
+    background-color: rgb(1 153 74);
     color: white;
     text-align: center;
    
