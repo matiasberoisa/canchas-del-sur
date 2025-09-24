@@ -15,37 +15,71 @@
         <nav>
             <ul>
                 <li><a href="#home">Home</a></li>
-                <li><a href="#services">Reserva tu Cancha</a></li>
+                <li><a href="#canchasClasificacion">Reserva tu Cancha</a></li>
+                <li><a href="#faq">FAQ</a></li>
                 <li><a href="#contact">Contacto</a></li>
             </ul>
         </nav>
     </header>
     <main>
-        <article>
-            <h2>Bienvenido a CanchasDelSur</h2>
-            <p>Tu lugar para reservar canchas de fútbol en el sur de la ciudad.</p>
-        </article>
-        <article>
-            <section id="home">
-                <p>Bienvenido a CanchasDelSur, tu lugar para reservar canchas de fútbol en el sur de la ciudad.</p>
+        <article class="bienvenida" id="home">
+            <section class="titulo">
+                <h2>Bienvenido a Canchas Del Sur</h2>
+                <p>Tu lugar para reservar canchas de fútbol en el sur de la ciudad.</p>
             </section>
-        </article>
-        <article class="canchas">
-            <section class = "F5 services">
-                <p class="service-text">Futbol 5</p>
-            </section>
-            <section class = "F8 services">  
-                <p class="service-text">Futbol 8</p>
-            </section>
-            <section class = "F11 services">
-                <p class="service-text">Futbol 11</p>
-            </section>
-        </article>
-        <article>
-            <section id="contact">
 
-                <p>Para más información, contáctanos a través de nuestro formulario de contacto.</p>
+            <section class="carrusel">
+                <ul>
+                    <li><img src="utils/canchas/futbol.jpg" alt="Cancha 1"></li>
+                    <li><img src="utils/canchas/tenis.jpg" alt="Cancha 2"></li>
+                    <li><img src="utils/canchas/futbol.jpg" alt="Cancha 1"></li>
+                    <li><img src="utils/canchas/tenis.jpg" alt="Cancha 2"></li>
+                </ul>
             </section>
+        </article>
+
+        <article id="canchasClasificacion">
+            <h3>Selecciona que cancha deseas reservar</h3>
+            <section class="canchas">
+                <section class="F5 services">
+                    <p class="service-text">Futbol 5</p>
+                </section>
+                <section class="F8 services">
+                    <p class="service-text">Futbol 8</p>
+                </section>
+                <section class="F11 services">
+                    <p class="service-text">Futbol 11</p>
+                </section>
+            </section>
+
+        </article>
+
+        <article class="faq" id="faq">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAACXBIWXMAAAsTAAALEwEAmpwYAAADW0lEQVR4nO2aW0gVURSGPzO6UET3sqQgIkoSK7s99JC9hdBDl5csKqMgesl6r4eKIsjXIAwhTEN6iwoylKgICjSzKCkK6QKBXeiCSaWxYR3YDDPnzMyZObPPOfuDBQ4ze81e/3H2XmvNgMVisVgsFoslFDOBSqA6S6sAJpMnjAcagKfAaIT2F+gCtgElGMoyoD/iwN3sFjAVw1gCfM5B8CnrBiZhCGOBvhwGn7ImDKE+geBT64JaIBOnKyEBlJ1KOvgSYDhBAe6asNePhrRmYBNQC9wM6eNV0gKUh5z4dZeF9EkIP+/IUwFqZHyp5mtfsQjwXgt8O1Amf08BfhWDAGe08ReBPdpxazEIsFwb/wa4qh1vLnQBurWxs4AOoN2xGH4sZAEafPg8X6gCjGgLXjpWZSnAIukjVEqeYowAr7VxpXL8ReyOdm4MMJSFAO2Oa3qBI9KriJx5AQT4AcyXcTsd5/4BK+TcmgA+B1zmdM3j2pfA0qgFmBhwDVAi9Egl5zw3JOd+B/D3yGVOnWmuVz2LxVGL8CKgCFHapRDz6XVkoFlzOkEBVCGlM10ep0zj9OQra8qAbwkE/9ilQbrD51h90Y2EXbLN5Sr4746MMkWHz/FDcXSXDwN/chD8ILDR5f7rA/4IseQI64D7MQWudo4rwAKPez8M6E/lMLFRIb+U38m0AWc97Lg8YrMz3POoSQIgWZqfZ3Ev0TAB+JpPAgwAq7PwP00eCf0t0Y18EaBTyuEwqJx+v+ZfFU8pmkwS4JnHjRul7veLvl2NAz6InwtAiyOQVpMEOOa4oer31Xlcq1LTcx7b2CeHYCqJ+SlVo1OgPpMEKAEOSgv8cprXWDOA2xkmu1W7vlx++SqHn+qAeUDsAvhBlcBvfUy2X/L8dGJ3m7YNZqIuYBtcvQXakqaSawkogOplJEpPwAmnbFiaG89FwA0hqtKRuDpEQWgOKYBbk+WBR5PFy5R4iVMbkQBh7CQGUBpi4YrCVLo8B0Ookn/hXAU/Ig1Zo6jJ0QdWqldxCENZKGmsn35eGLsHrCUPmAvsBk6k6Q+0BQh80JQPqZJKohJ/dxgnK32k0QUtQKqQ6ihmAZBSudFDAFUeFw11LuuCn+8RCooK6T2oHsQBkz+tt1gsFguG8x/yHcpQZLlLxwAAAABJRU5ErkJggg=="
+                alt="faq">
+            <h2>Preguntas Frecuentes</h2>
+            <details style="border-top-left-radius: 8px; border-top-right-radius: 8px;">
+                <summary>¿Cómo puedo reservar una cancha?</summary>
+                <p>Para reservar una cancha, dirígete a la sección "Reserva tu Cancha" y sigue las instrucciones.</p>
+            </details>
+            <details>
+                <summary>¿Es necesario registrarse para reservar una cancha?</summary>
+                <p>No es necesario registrarse para reservar una cancha, pero te recomendamos hacerlo para facilitar el
+                    proceso de reserva.</p>
+            </details>
+            <details>
+                <summary>¿Cuáles son los horarios disponibles para reservar?</summary>
+                <p>Los horarios disponibles varían según la cancha. Consulta la sección de reservas para ver los
+                    horarios específicos.</p>
+            </details>
+            <details style="border-bottom-left-radius: 8px; border-bottom-right-radius: 8px;">
+                <summary>¿Puedo cancelar o modificar mi reserva?</summary>
+                <p>Sí, puedes cancelar o modificar tu reserva hasta 24 horas antes del horario reservado.</p>
+            </details>
+        </article>
+        <article id="contact">
+            <h2>Contacto</h2>
+            <p>Para más información, contáctanos a través de nuestro formulario de contacto.</p>
         </article>
     </main>
     <footer>

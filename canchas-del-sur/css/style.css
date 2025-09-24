@@ -3,7 +3,7 @@ html {
 }
 
 header {
-    background-color: rgb(1 153 74);
+    background-color: rgb(2, 133, 65);
     padding: 1rem;
     display: flex;
     box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 12px 0px;
@@ -40,6 +40,10 @@ header {
     }
 }
 
+main {
+    overflow: auto;
+}
+
 body {
     height: 100%;
     margin: 0%;
@@ -53,17 +57,77 @@ body {
     color: white;
 }
 
-button {
-    background-color: rgb(1 153 74);
+.bienvenida {
+    position: relative;
+}
+
+.bienvenida img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+.bienvenida .titulo {
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    background: linear-gradient(100deg, white, white, transparent, transparent);
+    width: 100%;
+    height: 100%;
+}
+
+.carrusel {
+    width: 100%;
+    overflow: hidden;
+    ;
+}
+
+.carrusel ul {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 120px;
-    height: 100px;
-    border-radius: 20%;
-    font-size: 10px;
-    color: white;
-    border-color: rgb(1 153 74);
+    padding: 0;
+    width: 400%;
+    animation: slide 20s infinite alternate ease-in-out;
+}
+
+.carrusel li {
+    width: 100%;
+    list-style: none;
+    position: relative;
+    overflow: hidden;
+}
+
+@keyframes slide {
+    0% {
+        margin-left: 0%;
+    }
+
+    20% {
+        margin-left: 0%;
+    }
+
+    25% {
+        margin-left: -100%;
+    }
+
+    45% {
+        margin-left: -100%;
+    }
+
+    50% {
+        margin-left: -200%;
+    }
+
+    70% {
+        margin-left: -200%;
+    }
+
+    75% {
+        margin-left: -300%;
+    }
+
+    100% {
+        margin-left: -300%;
+    }
 }
 
 .canchas {
@@ -76,28 +140,37 @@ button {
 
 .services {
     position: relative;
-    width: 400px; 
+    width: 400px;
     height: 200px;
     transition: 0.4ms;
     cursor: pointer;
-    background-size: cover;       /* hace que la imagen cubra todo */
-    background-position: center;  /* centra la imagen */
+    background-size: cover;
+    /* hace que la imagen cubra todo */
+    background-position: center;
+    /* centra la imagen */
 }
 
-.F5 { background-image: url('../utils/f5.png'); 
+.F5 {
+    background-image: url('../utils/f5.png');
+
     &:hover {
-    transform: scale(1.05);
-    background-image: url('../utils/futbol 5.gif');
-    }
-}
-.F8 { background-image: url('../utils/F8.png'); 
-    &:hover {
-    transform: scale(1.05);
-    background-image: url('../utils/futbol 8.gif');
+        transform: scale(1.05);
+        background-image: url('../utils/futbol 5.gif');
     }
 }
 
-.F11 { background-image: url('../utils/F11.png'); 
+.F8 {
+    background-image: url('../utils/F8.png');
+
+    &:hover {
+        transform: scale(1.05);
+        background-image: url('../utils/futbol 8.gif');
+    }
+}
+
+.F11 {
+    background-image: url('../utils/F11.png');
+
     &:hover {
         transform: scale(1.05);
         background-image: url('../utils/futbol 11.gif');
@@ -105,9 +178,61 @@ button {
 }
 
 footer {
-    background-color: rgb(1 153 74);
+    background-color: rgb(2, 133, 65);
     color: white;
     text-align: center;
-   
+
+
+}
+
+/* FAQ estilos */
+.faq {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 90%;
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+
+
+}
+
+.faq details {
+
+    padding: 0.5rem;
+    width: 80%;
+
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+
+    background: #fff;
+}
+
+details summary {
+    color: rgb(2, 133, 65);
+    ;
+    list-style: none;
+    outline: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+details summary::-webkit-details-marker {
+    display: none;
+}
+
+.faq summary::after {
+    content: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='black' viewBox='0 0 24 24'><path d='M12 15.5l-7-7 1.41-1.41L12 12.67l5.59-5.58L19 8.5z'/></svg>");
+    display: inline-block;
+    margin-left: 8px;
+    transition: transform 0.3s ease;
+}
+
+.faq details[open] summary::after {
+    transform: rotate(180deg);
 
 }
