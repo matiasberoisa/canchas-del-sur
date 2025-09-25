@@ -74,7 +74,10 @@ body {
     background: linear-gradient(100deg, white, white, transparent, transparent);
     width: 100%;
     height: 100%;
+
 }
+
+
 
 .carrusel {
     width: 100%;
@@ -87,6 +90,7 @@ body {
     padding: 0;
     width: 400%;
     animation: slide 20s infinite alternate ease-in-out;
+    margin: 0;
 }
 
 .carrusel li {
