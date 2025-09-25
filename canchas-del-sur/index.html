@@ -10,7 +10,7 @@
 
 <body>
     <header>
-        <img src="utils/logo.png" alt="Canchas Del Sur Logo" class="logo">
+        <img src="utils/imagenes/logo.png" alt="Canchas Del Sur Logo" class="logo">
         <h1 class="tituloHeader">Canchas Del Sur</h1>
         <nav>
             <ul>
@@ -18,11 +18,13 @@
                 <li><a href="#canchasClasificacion">Reserva tu Cancha</a></li>
                 <li><a href="#faq">FAQ</a></li>
                 <li><a href="#contact">Contacto</a></li>
+                <li><a href="vistas/canchasCatologo.html">Reservas</a></li>
             </ul>
         </nav>
     </header>
+
     <main>
-        <article class="bienvenida" id="home">
+        <article class=" bienvenida" id="home">
             <section class="titulo">
                 <h2>Bienvenido a Canchas Del Sur</h2>
                 <p>Tu lugar para reservar canchas de fútbol en el sur de la ciudad.</p>
@@ -30,17 +32,18 @@
 
             <section class="carrusel">
                 <ul>
-                    <li><img src="utils/canchas/futbol.jpg" alt="Cancha 1"></li>
-                    <li><img src="utils/canchas/tenis.jpg" alt="Cancha 2"></li>
-                    <li><img src="utils/canchas/futbol.jpg" alt="Cancha 1"></li>
-                    <li><img src="utils/canchas/tenis.jpg" alt="Cancha 2"></li>
+                    <li><img src="utils/imagenes/canchas/futbol.jpg" alt="Cancha 1"></li>
+                    <li><img src="utils/imagenes/canchas/tenis.jpg" alt="Cancha 2"></li>
+                    <li><img src="utils/imagenes/canchas/futbol.jpg" alt="Cancha 1"></li>
+                    <li><img src="utils/imagenes/canchas/tenis.jpg" alt="Cancha 2"></li>
                 </ul>
             </section>
         </article>
 
         <article id="canchasClasificacion">
             <h3>Selecciona que cancha deseas reservar</h3>
-            <section class="canchas">
+            <section class="canchas" id="canchas"> >
+                <!-- <script src="js/script.js"></script> -->
                 <section class="F5 services">
                     <p class="service-text">Futbol 5</p>
                 </section>
@@ -87,7 +90,7 @@
                 <input type="email" id="" name="" placeholder="Email" required>
                 <label for="">Mensaje</label>
                 <textarea id="" name="" rows="4" placeholder="Escribinos tu duda..." required></textarea>
-                <button type="submit">Enviar</button>
+                <button class="boton" type="submit">Enviar</button>
             </form>
         </article>
     </main>
