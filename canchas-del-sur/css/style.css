@@ -42,6 +42,9 @@ header {
 
 main {
     overflow: auto;
+    height: 100%;
+    width: 100%;
+
 }
 
 body {
@@ -242,7 +245,7 @@ details summary::-webkit-details-marker {
 }
 
 .contacto {
-    margin : 1rem auto;
+    margin: 1rem auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
@@ -253,35 +256,43 @@ details summary::-webkit-details-marker {
 .contacto p {
     grid-column: 1;
 }
+
 .contacto p {
     grid-column: 1;
 }
 
 
-.formContacto { 
+.formContacto {
     grid-column: 2;
+    margin: auto;
+    width: 80%;
     display: flex;
     flex-direction: column;
     gap: 1rem;
     max-width: 400px;
     margin-top: 1rem;
-    background-color:  rgb(2, 133, 65);
+    background-color: rgb(2, 133, 65);
     padding: 1rem;
     border-radius: 8px;
     color: white;
     box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 12px 0px;
 }
-.formContacto input, textarea{
+
+.formContacto input,
+textarea {
     border: solid 1px #ccc;
     border-radius: 8px;
     padding: 0.5rem;
     background: none;
     outline: none;
 }
-.formContacto input::placeholder, .formContacto textarea::placeholder{
+
+.formContacto input::placeholder,
+.formContacto textarea::placeholder {
     color: #eee;
 }
-.formContacto button{
+
+.formContacto button {
     background-color: white;
     color: rgb(2, 133, 65);
     border: none;
@@ -291,6 +302,41 @@ details summary::-webkit-details-marker {
     cursor: pointer;
     transition: 0.3s;
 }
-.formContacto button:hover{
+
+.formContacto button:hover {
     transform: scale(1.05);
+}
+
+
+
+.cancha {
+    position: relative;
+    display: grid;
+    width: 500px;
+    height: 300px;
+    background: #7bc47f;
+    border: 4px solid #333;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Jugadores */
+.jugador {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #fff;
+    border: 3px solid #000;
+}
+
+/* Pelota */
+.pelota {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #ffeb3b;
+    border-radius: 50%;
+    border: 2px solid #000;
+    transition: transform 0.7s ease;
 }
