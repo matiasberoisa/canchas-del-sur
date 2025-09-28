@@ -58,6 +58,8 @@ body {
     display: flex;
     justify-content: space-between;
     flex-direction: column;
+    font-family: "Rubik", sans-serif;
+    font-weight: 400;
 }
 
 footer {
@@ -66,4 +68,12 @@ footer {
     text-align: center;
 
 
+}
+
+@font-face {
+  font-family: "Rubik";
+  src: url("../fonts/Rubik-Regular.woff2") format("woff2"),
+       url("../fonts/Rubik-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
 }
