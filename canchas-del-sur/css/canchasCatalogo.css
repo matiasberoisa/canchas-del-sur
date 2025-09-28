@@ -68,16 +68,7 @@ footer {
   text-align: center;
 }
 
-input {
-  float: none;
-  width: auto;
-  max-width: 453px;
-  margin-bottom: 25px;
-  margin-top: 29px;
-  display: inline-block;
-  text-align: left;
-  padding: 1rem 1rem;
-}
+/* Filtros */
 
 .buscador {
   position: sticky;
@@ -98,47 +89,73 @@ input {
   gap: 10px;
 }
 
+.buscador input {
+  float: none;
+  width: auto;
+  max-width: 100%;
+  text-align: left;
+  padding: 1rem 1rem;
+  border: 1px solid black;
+  border-radius: 1rem;
+  outline: none;
+}
+
 .buscador button {
   background-color: #FFFFFF;
   border: 1px solid #222222;
-  border-radius: 8px;
-  box-sizing: border-box;
+  border-radius: 1rem;
+
   color: #222222;
   cursor: pointer;
-  display: inline-block;
   font-size: 16px;
   font-weight: 600;
-  line-height: 20px;
-  margin: 0;
   outline: none;
   padding: 13px 23px;
-  position: relative;
-  text-align: center;
   text-decoration: none;
   touch-action: manipulation;
   transition: box-shadow .2s, -ms-transform .1s, -webkit-transform .1s, transform .1s;
-  user-select: none;
-  -webkit-user-select: none;
-  width: auto;
+
+  &:focus-visible {
+    box-shadow: #222222 0 0 0 2px, rgba(255, 255, 255, 0.8) 0 0 0 4px;
+    transition: box-shadow .2s;
+  }
+
+  &:active {
+    background-color: #F7F7F7;
+    border-color: #000000;
+    transform: scale(.96);
+  }
+
+  &:disabled {
+    border-color: #DDDDDD;
+    color: #DDDDDD;
+    cursor: not-allowed;
+    opacity: 1;
+  }
 }
 
-.buscador button:focus-visible {
-  box-shadow: #222222 0 0 0 2px, rgba(255, 255, 255, 0.8) 0 0 0 4px;
-  transition: box-shadow .2s;
+select {
+  outline: none;
+  padding: 0.1rem 0.1em;
+  border: 1px solid var(--select-border);
+  border-radius: 0.25em;
+  font-size: 1rem;
+  cursor: pointer;
+  line-height: 1;
+  background-color: #fff;
+
+  &:after {
+    content: "";
+    width: fit-content;
+    height: fit-content;
+    background-color: var(--select-arrow);
+    clip-path: polygon(100% 0%, 0 0%, 50% 100%);
+
+  }
 }
 
-.buscador button:active {
-  background-color: #F7F7F7;
-  border-color: #000000;
-  transform: scale(.96);
-}
 
-.buscador button:disabled {
-  border-color: #DDDDDD;
-  color: #DDDDDD;
-  cursor: not-allowed;
-  opacity: 1;
-}
+/* Catalogo */
 
 .resultadosCanchas {
   display: flex;
@@ -152,7 +169,6 @@ input {
 .canchaData {
   display: flex;
   flex-direction: column;
-
   padding: 1rem;
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 12px 0px;
 
@@ -165,36 +181,6 @@ h2 {
   text-align: center;
 }
 
-select {
-  outline: none;
-  padding: 0.1rem 0.1em;
-  border: 1px solid var(--select-border);
-  border-radius: 0.25em;
-  font-size: 1rem;
-  cursor: pointer;
-  line-height: 1;
-  background-color: #fff;
-
-
-}
-
-select::after {
-  content: "";
-  width: fit-content;
-  height: fit-content;
-  background-color: var(--select-arrow);
-  clip-path: polygon(100% 0%, 0 0%, 50% 100%);
-}
-
-select:focus+.focus {
-  position: absolute;
-  top: -1px;
-  left: -1px;
-  right: -1px;
-  bottom: -1px;
-  border: 2px solid var(--select-focus);
-  border-radius: inherit;
-}
 
 .canchaData button {
   background-color: #FFFFFF;
