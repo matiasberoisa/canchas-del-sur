@@ -158,29 +158,29 @@ body {
 }
 
 .F5 {
-    background-image: url('../utils/f5.png');
+    background-image: url('../utils/images/f5.png');
 
     &:hover {
         transform: scale(1.05);
-        background-image: url('../utils/futbol 5.gif');
+        background-image: url('../utils/images/futbol 5.gif');
     }
 }
 
 .F8 {
-    background-image: url('../utils/F8.png');
+    background-image: url('../utils/images/F8.png');
 
     &:hover {
         transform: scale(1.05);
-        background-image: url('../utils/futbol 8.gif');
+        background-image: url('../utils/images/futbol 8.gif');
     }
 }
 
 .F11 {
-    background-image: url('../utils/F11.png');
+    background-image: url('../utils/images/F11.png');
 
     &:hover {
         transform: scale(1.05);
-        background-image: url('../utils/futbol 11.gif');
+        background-image: url('../utils/images/futbol 11.gif');
     }
 }
 
@@ -339,4 +339,16 @@ textarea {
     border-radius: 50%;
     border: 2px solid #000;
     transition: transform 0.7s ease;
+}
+
+@font-face {
+  font-family: "Rubik";
+  src: url("../fonts/Rubik-Regular.woff2") format("woff2"),
+       url("../fonts/Rubik-Regular.woff") format("woff");
+  font-style: normal;
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+  font-weight: 500;
 }

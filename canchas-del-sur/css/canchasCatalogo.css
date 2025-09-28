@@ -40,6 +40,17 @@ header {
     }
 }
 
+ input {
+     float: none;
+     width: auto;
+     max-width: 453px;
+     margin-bottom: 25px;
+     margin-top: 29px;
+     display: inline-block;
+     text-align: left;
+     padding: 1rem 1rem;
+ }
+
 .tituloHeader {
     margin: 0%;
     color: white;
@@ -71,27 +82,209 @@ footer {
 .buscador {
     padding: 1rem;
     box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 12px 0px;
+    display: flex;
+    
 }
 
 .buscador form {
     display: flex;
     justify-content: space-between;
+    
+    flex: 1;           
+    min-width: 120px;
+    gap: 10px;
+}
+
+.buscador button {
+    background-color: #FFFFFF;
+  border: 1px solid #222222;
+  border-radius: 8px;
+  box-sizing: border-box;
+  color: #222222;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,"Helvetica Neue",sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20px;
+  margin: 0;
+  outline: none;
+  padding: 13px 23px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  touch-action: manipulation;
+  transition: box-shadow .2s,-ms-transform .1s,-webkit-transform .1s,transform .1s;
+  user-select: none;
+  -webkit-user-select: none;
+  width: auto;
+}
+
+.buscador button:focus-visible {
+  box-shadow: #222222 0 0 0 2px, rgba(255, 255, 255, 0.8) 0 0 0 4px;
+  transition: box-shadow .2s;
+}
+
+.buscador button:active {
+  background-color: #F7F7F7;
+  border-color: #000000;
+  transform: scale(.96);
+}
+
+.buscador button:disabled {
+  border-color: #DDDDDD;
+  color: #DDDDDD;
+  cursor: not-allowed;
+  opacity: 1;
 }
 
 .resultadosCanchas {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
     margin-top: 1rem;
     gap: 1rem;
+    flex: 1;
 }
 
 .canchaData {
     display: flex;
     flex-direction: column;
-
+    
     padding: 1rem;
     box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 12px 0px;
 
+}
+
+h2 {
+  display: block;
+  width: 100%;         
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+select {
+  width: fit-content;
+  min-width: max-content;
+  padding: 0.25em 0.5em;
+  border: 1px solid var(--select-border);
+  border-radius: 0.25em;
+  font-size: 1rem;
+  cursor: pointer;
+  line-height: 1;
+  background-color: #fff;
+  background-image: linear-gradient(to top, #f9f9f9, #fff 33%);
+  display: grid;
+  grid-template-areas: "select";
+  align-items: center;
+}
+
+select::after {
+  content: "";
+  width: fit-content;
+  height: fit-content;
+  background-color: var(--select-arrow);
+  clip-path: polygon(100% 0%, 0 0%, 50% 100%);
+}
+
+select:focus + .focus {
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  right: -1px;
+  bottom: -1px;
+  border: 2px solid var(--select-focus);
+  border-radius: inherit;
+}
+
+.canchaData button {
+  background-color: #FFFFFF;
+  border: 1px solid #222222;
+  border-radius: 8px;
+  box-sizing: border-box;
+  color: #000000;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20px;
+  margin: 0;
+  outline: none;
+  padding: 13px 23px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  touch-action: manipulation;
+  transition: box-shadow .2s,-ms-transform .1s,-webkit-transform .1s,transform .1s;
+  user-select: none;
+  -webkit-user-select: none;
+  width: auto;
+  gap: 10px;
+  margin-bottom: 10px;
+  display: inline-block;
+}
+
+.canchaData button:focus-visible {
+  box-shadow: #222222 0 0 0 2px, rgba(255, 255, 255, 0.8) 0 0 0 4px;
+  transition: box-shadow .2s;
+}
+
+.canchaData button:active {
+  background-color: #F7F7F7;
+  border-color: #000000;
+  transform: scale(.96);
+}
+
+.canchaData button:disabled {
+  border-color: #DDDDDD;
+  color: #DDDDDD;
+  cursor: not-allowed;
+  opacity: 1;
+}
+
+.horarios button {
+  background-color: #FFFFFF;
+  border: 1px solid #222222;
+  border-radius: 8px;
+  box-sizing: border-box;
+  color: #000000;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20px;
+  margin: 0;
+  outline: none;
+  padding: 13px 23px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  touch-action: manipulation;
+  transition: box-shadow .2s,-ms-transform .1s,-webkit-transform .1s,transform .1s;
+  user-select: none;
+  -webkit-user-select: none;
+  width: auto;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.horarios button:focus-visible {
+  box-shadow: #222222 0 0 0 2px, rgba(255, 255, 255, 0.8) 0 0 0 4px;
+  transition: box-shadow .2s;
+}
+
+.horarios button:focus {
+  background-color: rgb(2, 133, 65);
+  color: white;
+  border-color: rgb(2, 133, 65);
+  outline: none;
+}
+
+.horarios button:disabled {
+  border-color: #DDDDDD;
+  color: #DDDDDD;
+  cursor: not-allowed;
+  opacity: 1;
 }
 
 .horarios {
@@ -106,4 +299,21 @@ footer {
     border: solid 1px rgb(2, 133, 65);
     border-radius: 8px;
     cursor: pointer;
+}
+
+p {
+    text-align: center;
+}
+
+@font-face {
+  font-family: "Rubik";
+  src: url("../fonts/Rubik-Regular.woff2") format("woff2"),
+       url("../fonts/Rubik-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+  font-weight: 400;
 }
