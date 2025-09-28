@@ -69,6 +69,23 @@ footer {
 
 
 }
+.descripcion {
+    display: block;
+    width: 50%; 
+    margin: 0 auto; 
+    border-radius: 10px;
+    text-align: center; 
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 12px 0px;
+
+}
+.ubicacion {
+display: block;
+margin: auto;
+width: 50%;
+border-radius: 10px;
+text-align: center;
+box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 12px 0px;
+}
 
 @font-face {
   font-family: "Rubik";
