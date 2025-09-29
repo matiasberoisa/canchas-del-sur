@@ -13,6 +13,7 @@ header {
     img {
         width: 100px;
         height: 50px;
+        cursor: pointer;
     }
 
     ul {
@@ -21,12 +22,14 @@ header {
         gap: 1rem;
     }
 
+    a {
+        text-decoration: none;
+        color: white;
+    }
+
     li {
         a {
-            text-decoration: none;
-            color: white;
             font-size: 20px;
-
         }
 
         transition: 0.3s;
@@ -342,13 +345,13 @@ textarea {
 }
 
 @font-face {
-  font-family: "Rubik";
-  src: url("../fonts/Rubik-Regular.woff2") format("woff2"),
-       url("../fonts/Rubik-Regular.woff") format("woff");
-  font-style: normal;
+    font-family: "Rubik";
+    src: url("../fonts/Rubik-Regular.woff2") format("woff2"),
+        url("../fonts/Rubik-Regular.woff") format("woff");
+    font-style: normal;
 }
 
 body {
-  font-family: "Rubik", sans-serif;
-  font-weight: 500;
+    font-family: "Rubik", sans-serif;
+    font-weight: 500;
 }
