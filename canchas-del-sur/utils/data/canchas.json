@@ -2,18 +2,21 @@
   {
     "id": 1,
     "tipo": "Futbol 5",
+    "ubicacion": "Calle Falsa 123",
     "imagen": "../utils/images/descarga.jfif",
     "horarios": ["9:00", "10:00", "11:00"]
   },
   {
     "id": 2,
     "tipo": "Futbol 8",
+    "ubicacion": "Calle Falsa 456",
     "imagen": "../utils/images/descarga.jfif",
     "horarios": ["14:00", "15:00", "16:00"]
   },
   {
     "id": 3,
     "tipo": "Futbol 11",
+    "ubicacion": "Calle Falsa 789",
     "imagen": "../utils/images/descarga.jfif",
     "horarios": ["18:00", "19:00", "20:00"]
   }
