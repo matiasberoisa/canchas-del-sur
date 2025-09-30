@@ -73,7 +73,7 @@ footer {
 
 /* Filtros */
 
-.buscador {
+#buscador {
   position: sticky;
   top: 0;
   padding: 1rem;
@@ -83,7 +83,7 @@ footer {
   z-index: 1;
 }
 
-.buscador form {
+#buscador form {
   margin: 0;
   display: flex;
   justify-content: space-between;
@@ -92,7 +92,7 @@ footer {
   gap: 10px;
 }
 
-.buscador input {
+#buscador input {
   float: none;
   width: auto;
   max-width: 100%;
@@ -103,7 +103,7 @@ footer {
   outline: none;
 }
 
-.buscador button {
+#buscador button {
   background-color: #FFFFFF;
   border: 1px solid #222222;
   border-radius: 1rem;
@@ -160,7 +160,7 @@ select {
 
 /* Catalogo */
 
-.resultadosCanchas {
+#resultadosCanchas {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -169,7 +169,7 @@ select {
   flex: 1;
 }
 
-.canchaData {
+#canchaData {
   display: flex;
   flex-direction: column;
   padding: 1rem;
@@ -182,11 +182,11 @@ select {
   }
 }
 
-.canchaData .canchaNombre {
+#canchaData #canchaNombre {
   font-weight: bold;
 }
 
-.canchaData .canchaUbicacion {
+#canchaData #canchaUbicacion {
   color: gray;
   font-weight: lighter;
 
@@ -200,7 +200,7 @@ h2 {
 }
 
 
-.canchaData button {
+#canchaData button {
   background-color: #FFFFFF;
   border: 1px solid #222222;
   border-radius: 8px;
@@ -227,18 +227,18 @@ h2 {
   display: inline-block;
 }
 
-.canchaData button:focus-visible {
+#canchaData button:focus-visible {
   box-shadow: #222222 0 0 0 2px, rgba(255, 255, 255, 0.8) 0 0 0 4px;
   transition: box-shadow .2s;
 }
 
-.canchaData button:active {
+#canchaData button:active {
   background-color: #F7F7F7;
   border-color: #000000;
   transform: scale(.96);
 }
 
-.canchaData button:disabled {
+#canchaData button:disabled {
   border-color: #DDDDDD;
   color: #DDDDDD;
   cursor: not-allowed;
@@ -246,14 +246,14 @@ h2 {
 }
 
 
-.horarios {
+#horarios {
   display: flex;
   justify-content: space-between;
   gap: 0.5rem;
 
 }
 
-.horarios p {
+#horarios p {
   padding: 0.3rem 0.5rem;
   border: solid 1px rgb(2, 133, 65);
   border-radius: 8px;
