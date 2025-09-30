@@ -13,15 +13,14 @@
         <h1 class="tituloHeader"> <a href="../index.html">Canchas Del Sur</a></h1>
         <nav>
             <ul>
-
                 <li><a href="../index.html#faq">FAQ</a></li>
                 <li><a href="../index.html#contacto9">Contacto</a></li>
                 <li><a href="canchasCatalogo.html">Reserva tu cancha</a></li>
             </ul>
         </nav>
     </header>
-    <main id="#canchitas">
-        <div class="buscador">
+    <main>
+        <div id="buscador">
             <form action="">
                 <input type="text" placeholder="Buscar...">
                 <select name="" id="">
@@ -45,21 +44,9 @@
 
             </form>
         </div>
-        <article class="canchasCatalogo">
+        <article>
             <h2>Canchas disponibles</h2>
-            <section class="resultadosCanchas">
-                <section class="canchaData">
-                    <img src="../utils/images/descarga.jfif" alt="">
-                    <p class="canchaNombre">Futbol 5</p>
-                    <p class="canchaUbicacion"> <i class="fa-solid fa-location-dot" style="color: gray ; margin-right: 0.3rem;"></i>  Neuquen, Argentina</p>
-                    
-                    <section class="horarios">
-                        <p>horario1</p>
-                        <p>horario2</p>
-                        <p>horario3</p>
-                    </section>
-                    <button class="button" onclick="location.href='canchaDetalle.html'">Reservar</button>
-                </section>
+            <section id="resultadosCanchas">
 
             </section>
         </article>
@@ -67,6 +54,10 @@
     <footer>
         <p>&copy; 2025 CanchasDelSur. All rights reserved.</p>
     </footer>
+    <script src="../js/canchasCatalogo.js"></script>
+    <script>
+        cargarCanchasDisponibles();
+    </script>
 </body>
 
 </html>
