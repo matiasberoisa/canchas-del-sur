@@ -13,6 +13,7 @@ header {
     img {
         width: 100px;
         height: 50px;
+        cursor: pointer;
     }
 
     ul {
@@ -21,12 +22,14 @@ header {
         gap: 1rem;
     }
 
+    a {
+        text-decoration: none;
+        color: white;
+    }
+
     li {
         a {
-            text-decoration: none;
-            color: white;
             font-size: 20px;
-
         }
 
         transition: 0.3s;
@@ -39,6 +42,7 @@ header {
         font-weight: bold;
     }
 }
+
 
 .tituloHeader {
     margin: 0%;
