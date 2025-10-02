@@ -19,7 +19,7 @@ function mostrarCanchas(canchas) {
         <p id="canchaNombre">${cancha.tipo}</p>
         <p id="canchaUbicacion">
           <i class="fa-solid fa-location-dot" style="color: gray ; margin-right: 0.3rem;"></i>
-          ${cancha.ubicacion}
+          <span>${cancha.ubicacion}</span>
         </p>
         <section id="horarios">
           ${cancha.horarios.map(h => `<p>${h}</p>`).join("")}
