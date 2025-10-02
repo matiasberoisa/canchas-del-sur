@@ -153,9 +153,11 @@ padding-left: 0.5rem;
 
 
 @font-face {
-    font-family: "Rubik";
-    src: url("../fonts/Rubik-Regular.woff2") format("woff2"),
-        url("../fonts/Rubik-Regular.woff") format("woff");
-    font-weight: 400;
+    font-family: "Raleway";
+    src: url("../utils/fonts/Raleway-Italic-VariableFont_wght.ttf") format("woff2");
     font-style: normal;
+}
+
+body {
+    font-family: "Raleway", sans-serif;
 }
