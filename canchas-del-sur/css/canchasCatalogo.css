@@ -41,14 +41,13 @@ header {
 
     font-weight: bold;
   }
+
+  h1 {
+    margin: 0%;
+    color: white;
+  }
 }
 
-
-
-.tituloHeader {
-  margin: 0%;
-  color: white;
-}
 
 main {
   overflow: auto;
