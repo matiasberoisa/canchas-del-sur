@@ -2,22 +2,69 @@
   {
     "id": 1,
     "tipo": "Futbol 5",
-    "ubicacion": "Calle Falsa 123",
-    "imagen": "../utils/images/descarga.jfif",
-    "horarios": ["9:00", "10:00", "11:00"]
+    "ubicacion": "Neuquén, Complejo Sicolo",
+    "imagen": "../utils/images/canchas/cancha2.jfif",
+    "horarios": ["9:00 PM", "10:00 PM", "11:00 PM"],
+    "descripcion": "Cancha de césped sintético, iluminación, parrillas y duchas.",
+    "servicios": [
+      {
+        "nombre": "Parrilla",
+        "icon": "<i class=\"fa-solid fa-utensils\"></i>"
+      },
+      {
+        "nombre": "Vestuarios",
+        "icon": "<i class=\"fa-solid fa-user-alt\"></i>"
+      },
+      {
+        "nombre": "Estacionamiento",
+        "icon": "<i class=\"fa-solid fa-car-side\"></i>"
+      },
+      {
+        "nombre": "Iluminación",
+        "icon": "<i class=\"fa-solid fa-lightbulb\"></i>"
+      }
+    ]
   },
   {
     "id": 2,
     "tipo": "Futbol 8",
-    "ubicacion": "Calle Falsa 456",
-    "imagen": "../utils/images/descarga.jfif",
-    "horarios": ["14:00", "15:00", "16:00"]
+    "ubicacion": "Plottier, Club Deportivo",
+    "imagen": "../utils/images/canchas/cancha3.jfif",
+    "horarios": ["8:00 PM", "9:00 PM", "10:00 PM"],
+    "descripcion": "Cancha de fútbol 8 con césped natural y tribunas.",
+    "servicios": [
+      {
+        "nombre": "Buffet",
+        "icon": "<i class=\"fa-solid fa-drumstick-bite\"></i>"
+      },
+      {
+        "nombre": "Estacionamiento",
+        "icon": "<i class=\"fa-solid fa-car-side\"></i>"
+      },
+      { "nombre": "Tribunas", "icon": "<i class=\"fa-solid fa-chair\"></i>" }
+    ]
   },
   {
     "id": 3,
     "tipo": "Futbol 11",
-    "ubicacion": "Calle Falsa 789",
-    "imagen": "../utils/images/descarga.jfif",
-    "horarios": ["18:00", "19:00", "20:00"]
+    "ubicacion": "Neuquén, Estadio Central",
+    "imagen": "../utils/images/canchas/cancha2.jfif",
+    "horarios": ["7:00 PM", "8:00 PM", "9:00 PM"],
+    "descripcion": "Estadio profesional con césped natural y vestuarios completos.",
+    "servicios": [
+      {
+        "nombre": "Vestuarios",
+        "icon": "<i class=\"fa-solid fa-user-alt\"></i>"
+      },
+      { "nombre": "Tribunas", "icon": "<i class=\"fa-solid fa-chair\"></i>" },
+      {
+        "nombre": "Estacionamiento",
+        "icon": "<i class=\"fa-solid fa-car-side\"></i>"
+      },
+      {
+        "nombre": "Buffet",
+        "icon": "<i class=\"fa-solid fa-drumstick-bite\"></i>"
+      }
+    ]
   }
 ]
