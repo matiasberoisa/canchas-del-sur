@@ -290,7 +290,7 @@ details summary::-webkit-details-marker {
 
     align-items: start;
     /* background: linear-gradient(0deg, rgb(2, 133, 65) 1%, transparent 20%, transparent 20%, transparent), no-repeat bottom/100% url("../utils/images/fondos/fondoPelotas1.png"); */
-    background: linear-gradient(0deg, rgb(2, 133, 65) 1%, transparent 47%, transparent 52%, transparent), no-repeat bottom/100% url("../utils/images/fondos/fondoPelotas1.png");
+    background: linear-gradient(0deg, rgb(2, 133, 65) 1%, transparent 47%, transparent 52%, transparent);
 }
 
 #contacto h2 {
