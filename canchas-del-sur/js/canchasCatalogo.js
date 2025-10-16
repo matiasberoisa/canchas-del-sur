@@ -1,8 +1,8 @@
 function cargarCanchasDisponibles() {
-    console.log("Cargando canchas disponibles...");
   fetch("../utils/data/canchas.json")
     .then((response) => response.json())
     .then((data) => {
+
       mostrarCanchas(data);
     })
     .catch((error) => {
