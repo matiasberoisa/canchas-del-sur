@@ -13,20 +13,6 @@
     "nombre": "FUTBOL 5",
     "gift": "../utils/images/gift/F5.gif",
     "img": "../utils/images/gift/F5.png"
-  },
-  {
-    "nombre": "TENIS",
-    "gift": "../utils/images/gift/tenis.gif",
-    "img": "../utils/images/gift/tenis.png"
-  },
-  {
-    "nombre": "BASQUET",
-    "gift": "../utils/images/gift/basquet.gif",
-    "img": "../utils/images/gift/basquet.png"
-  },
-  {
-    "nombre": "VOLEY",
-    "gift": "../utils/images/gift/voley.gif",
-    "img": "../utils/images/gift/voley.png"
   }
 ]
+

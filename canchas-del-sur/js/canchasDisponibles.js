@@ -2,14 +2,8 @@ function cargarYMostrarCanchas() {
   fetch("../utils/data/tiposCanchasDisponibles.json")
     .then((response) => response.json())
     .then((data) => {
-      console.log(data);
-      const tiposCanchas = data.map((item) => ({
-        id: (item.nombre || item.id || "").replace(/\s+/g, "").toUpperCase(),
-        nombre: item.nombre || item.nombre,
-        imagen: (item.img || item.imagen || "").replace(/^\.\./, ""),
-        clase: (item.nombre || item.id || "").replace(/\s+/g, ""),
-      }));
-      mostrarTiposCanchas(tiposCanchas);
+
+      mostrarTiposCanchas(data);
     })
     .catch((error) => {
       console.error("Error al cargar las canchas:", error);
@@ -21,12 +15,23 @@ function mostrarTiposCanchas(canchas) {
   cont.innerHTML = "";
   canchas.forEach((t) => {
     const sec = document.createElement("section");
-    sec.id = "canchaTipo";
-
-    sec.innerHTML = `
-      <p ">${t.nombre}</p>
-      <img src="${t.imagen}" alt="${t.nombre}">
-    `;
+   const img = document.createElement("img");
+   const p = document.createElement("p");
+   
+   p.textContent = t.nombre;
+   img.src = t.img;
+   img.alt = t.nombre;
+   img.dataset.original = t.img;
+   sec.id = "canchaTipo";
+   
+       sec.addEventListener("mouseenter", () => {
+      img.src = t.gift;
+    });
+    sec.addEventListener("mouseleave", () => {
+      img.src = t.img;
+    });
+    sec.appendChild(p);
+    sec.appendChild(img);
     cont.appendChild(sec);
   });
 }
