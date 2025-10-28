@@ -199,8 +199,7 @@ body {
 }
 
 .F5 {
-    background-image: url('../utils/images/f5.png');
-
+    
     &:hover {
         transform: scale(1.05);
         background-image: url('../utils/images/futbol 5.gif');

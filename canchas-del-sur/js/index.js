@@ -1,6 +1,6 @@
 function cargarCanchas() {
     console.log("Cargando canchas disponibles...");
-  fetch("/canchas-del-sur/utils/data/seleccionInicial.json")
+  fetch("../utils/data/seleccionInicial.json")
     .then((response) => response.json())
     .then((data) => {
       mostrarCanchas(data);
@@ -13,10 +13,22 @@ function mostrarCanchas(canchas) {
   const seleccionContainer = document.getElementById("seleccionInicial");
   seleccionContainer.innerHTML = "";
   canchas.forEach(cancha => {
-    seleccionContainer.innerHTML += `
-    <section class="${cancha.tipo} services">
+    const section = document.createElement("section");
+    section.className = `${cancha.tipo} services`;
+    section.style.backgroundImage = `url('${cancha.imagen}')`
+    section.innerHTML = `
         <p class="service-text">${cancha.nombre}</p>
-    </section>
     `;
+    if (cancha.imagenHover) {
+    section.addEventListener("mouseenter", () => {
+        section.style.backgroundImage = `url('${cancha.imagenHover}')`;
+        section.style.transform = "scale(1.05)";
+    });
+    section.addEventListener("mouseleave", () => {
+        section.style.backgroundImage = `url('${cancha.imagen}')`;
+        section.style.transform = "scale(1)";
+    });
+}
+    seleccionContainer.appendChild(section);
   });
 }

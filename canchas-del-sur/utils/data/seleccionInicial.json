@@ -3,18 +3,21 @@
         "id":1,
         "nombre": "Futbol 5",
         "tipo": "F5",
-        "imagen": "../utils/images/f5.png"        
+        "imagen": "/utils/images/f5.png",  
+        "imagenHover": "/utils/images/futbol 5.gif"     
     },
     {
         "id":2,
         "nombre": "Futbol 8",
         "tipo": "F8",
-        "imagen": "../utils/images/F8.png"        
+        "imagen": "/utils/images/F8.png",
+        "imagenHover": "/utils/images/futbol 8.gif"
     },
     {
         "id":3,
         "nombre": "Futbol 11",
         "tipo": "F11",
-        "imagen": "../utils/images/F11.png"        
+        "imagen": "/utils/images/F11.png",
+        "imagenHover": "/utils/images/futbol 11.gif"
     }
 ]
