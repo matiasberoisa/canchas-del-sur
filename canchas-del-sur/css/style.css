@@ -1,5 +1,7 @@
-html {
-    height: 100%;
+body {
+    margin: 0;
+    padding: 0;
+
 }
 
 header {
@@ -9,6 +11,9 @@ header {
     box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 12px 0px;
     justify-content: space-between;
     align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 
     img {
         width: 100px;
@@ -49,20 +54,18 @@ header {
 
 }
 
-main {
-    overflow: auto;
-    height: 100%;
-    width: 100%;
+footer {
+    background-color: rgb(2, 133, 65);
+    color: white;
+    text-align: center;
 
+    p {
+        padding: 1rem;
+        margin: 0;
+    }
 }
 
-body {
-    height: 100%;
-    margin: 0%;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-}
+
 
 
 #home {
@@ -192,23 +195,25 @@ body {
 #canchaTipo {
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
 }
+
 #canchaTipo img {
     position: absolute;
-    inset: 0; 
+    inset: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
     transition: transform 0.4s ease;
 }
+
 #canchaTipo p {
     position: absolute;
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(to top, rgba(0,0,0,0.6), rgba(0,0,0,0.2));
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2));
     color: #fff;
     padding: 0.6rem 0.8rem;
     text-align: center;
@@ -217,6 +222,7 @@ body {
     background-color: black;
     margin: 0;
 }
+
 #canchaTipo:hover img {
     transform: scale(1.06);
 }
@@ -224,13 +230,6 @@ body {
 
 
 
-footer {
-    background-color: rgb(2, 133, 65);
-    color: white;
-    text-align: center;
-
-
-}
 
 /* FAQ estilos */
 .faq {
