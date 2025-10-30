@@ -160,24 +160,14 @@ body {
 
 .canchas {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
-    align-items: center;
+    align-items: stretch;
     padding: 30px;
     margin: 1rem;
     gap: 1rem;
-
-    p {
-        text-align: center;
-        font-weight: bold;
-        background-color: rgba(12, 12, 12, 0.8);
-        color: white;
-        position: absolute;
-        top: -35px;
-        width: 100%;
-        margin: 0;
-        padding: 0.5rem 0;
-    }
 }
+
 
 #canchasClasificacion h3 {
     text-align: center;
@@ -186,44 +176,53 @@ body {
     color: rgb(2, 133, 65);
 }
 
-.services {
+#canchaTipo {
     position: relative;
-    width: 400px;
+    flex: 1 1 calc(33.333% - 1rem);
+    max-width: calc(33.333% - 1rem);
+    min-width: 220px;
     height: 200px;
     transition: 0.4ms;
     cursor: pointer;
     background-size: cover;
-    /* hace que la imagen cubra todo */
     background-position: center;
-    /* centra la imagen */
 }
 
-.F5 {
-    background-image: url('../utils/images/f5.png');
 
-    &:hover {
-        transform: scale(1.05);
-        background-image: url('../utils/images/futbol 5.gif');
-    }
+#canchaTipo {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+#canchaTipo img {
+    position: absolute;
+    inset: 0; 
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+#canchaTipo p {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.6), rgba(0,0,0,0.2));
+    color: #fff;
+    padding: 0.6rem 0.8rem;
+    text-align: center;
+    font-weight: bold;
+    z-index: 2;
+    background-color: black;
+    margin: 0;
+}
+#canchaTipo:hover img {
+    transform: scale(1.06);
 }
 
-.F8 {
-    background-image: url('../utils/images/F8.png');
 
-    &:hover {
-        transform: scale(1.05);
-        background-image: url('../utils/images/futbol 8.gif');
-    }
-}
 
-.F11 {
-    background-image: url('../utils/images/F11.png');
-
-    &:hover {
-        transform: scale(1.05);
-        background-image: url('../utils/images/futbol 11.gif');
-    }
-}
 
 footer {
     background-color: rgb(2, 133, 65);
@@ -289,7 +288,8 @@ details summary::-webkit-details-marker {
     grid-template-rows: auto auto;
 
     align-items: start;
-    background: linear-gradient(0deg, rgb(2, 133, 65) 1%, transparent 20%, transparent 20%, transparent), no-repeat bottom/100% url("../utils/images/fondos/fondoPelotas1.png");
+    /* background: linear-gradient(0deg, rgb(2, 133, 65) 1%, transparent 20%, transparent 20%, transparent), no-repeat bottom/100% url("../utils/images/fondos/fondoPelotas1.png"); */
+    background: linear-gradient(0deg, rgb(2, 133, 65) 1%, transparent 47%, transparent 52%, transparent);
 }
 
 #contacto h2 {

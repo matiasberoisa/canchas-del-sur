@@ -134,11 +134,12 @@ footer {
 
     ul {
 
-padding-left: 0.5rem;
+        padding-left: 0.5rem;
+
         li {
             list-style-type: none;
             color: grey;
-            margin:1rem 0;
+            margin: 1rem 0;
         }
     }
 
@@ -151,6 +152,32 @@ padding-left: 0.5rem;
     box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 12px 0px;
 }
 
+#dias {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding-left: 0;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btnDias {
+    width: 10rem;
+    background-color: rgb(2, 133, 65);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btnDias :active {
+    background-color: white;
+    color: rgb(2, 133, 65);
+}
 
 @font-face {
     font-family: "Raleway";

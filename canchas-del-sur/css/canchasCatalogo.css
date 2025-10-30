@@ -139,7 +139,6 @@ footer {
 select {
   outline: none;
   padding: 0.1rem 0.1em;
-  border: 1px solid var(--select-border);
   border-radius: 0.25em;
   font-size: 1rem;
   cursor: pointer;
@@ -254,8 +253,6 @@ h2 {
 
 #horarios p {
   padding: 0.3rem 0.5rem;
-  border: solid 1px rgb(2, 133, 65);
-  border-radius: 8px;
   cursor: pointer;
   color: rgb(2, 133, 65);
   font-weight: bold;
