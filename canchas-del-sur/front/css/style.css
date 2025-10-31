@@ -188,14 +188,6 @@ body {
     background-position: center;
 }
 
-<<<<<<< HEAD:canchas-del-sur/css/style.css
-.F5 {
-    
-    &:hover {
-        transform: scale(1.05);
-        background-image: url('../utils/images/futbol 5.gif');
-    }
-=======
 
 #canchaTipo {
     border-radius: 8px;
@@ -227,7 +219,6 @@ body {
 }
 #canchaTipo:hover img {
     transform: scale(1.06);
->>>>>>> main:canchas-del-sur/front/css/style.css
 }
 
 
