@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router([]);
+const path = require("path");
 
 const host = "localhost";
 const port = 3030;
@@ -170,9 +171,10 @@ const canchas = [
   },
 ];
 
+app.use(express.static(path.join(__dirname, "../front")));
+
 app.get("/", (req, res) => {
-  res.json(canchas);
-  res.send(200);
+  res.sendFile(path.join(__dirname, "../front/index.html"));
 });
 
 app.listen(port, host, () => {
