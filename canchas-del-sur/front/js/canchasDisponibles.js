@@ -1,5 +1,5 @@
 function cargarYMostrarCanchas() {
-  fetch("../utils/data/tiposCanchasDisponibles.json")
+  fetch("/api/canchasInicio")
     .then((response) => response.json())
     .then((data) => {
 

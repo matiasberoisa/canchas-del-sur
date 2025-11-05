@@ -41,7 +41,7 @@ function renderizarDetalleCancha(cancha) {
 
 document.addEventListener("DOMContentLoaded", () => {
   const id = obtenerParametroURL("id");
-  fetch("../utils/data/canchas.json")
+  fetch("/api/canchas")
     .then((res) => res.json())
     .then((canchas) => {
       const cancha = canchas.find((c) => c.id == id);
