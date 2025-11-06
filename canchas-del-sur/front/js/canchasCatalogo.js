@@ -1,5 +1,5 @@
 function cargarCanchasDisponibles() {
-  fetch("../utils/data/canchas.json")
+  fetch("/api/canchas")
     .then((response) => response.json())
     .then((data) => {
 
