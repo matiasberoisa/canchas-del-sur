@@ -8,8 +8,8 @@ const port = 3030;
 const app = express();
 
 //Obtengo el canchas.json  y tiposCanchasDisponibles.json
-const canchas =require('../front/utils/data/canchas.json');
-const canchasInicio=require('../front/utils/data/tiposCanchasDisponibles.json');
+const canchas =require('./data/canchas.json');
+const canchasInicio=require('./data/tiposCanchasDisponibles.json');
 
 app.use(express.static(path.join(__dirname, "../front")));
 
