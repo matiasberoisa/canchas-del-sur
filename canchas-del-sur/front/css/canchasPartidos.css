@@ -2,6 +2,7 @@ body {
     margin: 0;
     padding: 0;
     position: relative;
+    font-family: "Segoe UI", sans-serif;
 }
 
 header {
@@ -92,3 +93,18 @@ footer {
         grid-column: 2 / 2;
     }
 }
+        #btnBuscarCanchasMapa {
+            background: rgb(2, 133, 65);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            padding: 10px 16px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        #btnBuscarCanchasMapa:hover {
+            background: #175f38;
+        }

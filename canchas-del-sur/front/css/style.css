@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-
+    font-family: "Segoe UI", sans-serif;
 }
 
 header {
@@ -377,16 +377,4 @@ textarea {
 
 #formContacto button:hover {
     transform: scale(1.05);
-}
-
-
-
-@font-face {
-    font-family: "Raleway";
-    src: url("../utils/fonts/Raleway-Italic-VariableFont_wght.ttf") format("woff2");
-    font-style: normal;
-}
-
-body {
-    font-family: "Raleway", sans-serif;
 }
