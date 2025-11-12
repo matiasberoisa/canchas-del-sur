@@ -25,107 +25,20 @@
         </nav>
     </header>
     <main>
-        <div id="map"></div>
-        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+        <div id="mapaContainer">
+            <div id="map"></div>
+            <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+            <script type="module" src="../js/canchasPartidos.js"></script>
+            <div id="seleccionMapa">
+                <p>Seleccionar Area Buscar</p>
+                <input type="range" id="kmRadio" name="kmRadio" min="5" max="100" value="5" step="5"/>
+                <label for="kmRadio">Area : <span id="areaValue">10</span> km</label>
+       
+                <input type="button" value="Buscar Canchas" id="btnBuscarCanchasMapa">
+           
+            </div>
 
-        <script>
-            window.onload = function () {
-                if (!navigator.geolocation) {
-                    alert("Tu navegador no soporta geolocalización");
-                    return;
-                }
-
-                navigator.geolocation.getCurrentPosition(
-                    (pos) => {
-                        const lat = pos.coords.latitude;
-                        const lon = pos.coords.longitude;
-
-                        const map = L.map("map").setView([lat, lon], 14);
-
-                        L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-                            maxZoom: 19,
-                            attribution: '&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a>'
-                        }).addTo(map);
-
-                        L.marker([lat, lon]).addTo(map).bindPopup("Estás aquí").openPopup();
-
-                        const radius = 5000;
-                        L.circle([lat, lon], {
-                            radius: radius,
-                            color: "blue",
-                            fillColor: "#3f99ff",
-                            fillOpacity: 0.2
-                        }).addTo(map);
-
-                        const partidos = [
-                            {
-                                nombre: "Partido 1",
-                                lat: lat + 0.02,
-                                lon: lon + 0.01,
-                                cancha: "Complejo El Sur",
-                                integrantes: 7,
-                                horario: "21:00 hs",
-                            },
-                            {
-                                nombre: "Partido 2",
-                                lat: lat - 0.015,
-                                lon: lon - 0.005,
-                                cancha: "Fútbol City",
-                                integrantes: 9,
-                                horario: "19:30 hs",
-                            },
-                            {
-                                nombre: "Partido 3",
-                                lat: lat + 0.03,
-                                lon: lon - 0.01,
-                                cancha: "Cancha Norte",
-                                integrantes: 5,
-                                horario: "22:00 hs",
-                            },
-                        ];
-
-
-                        partidos.forEach((p) => {
-                            const distancia = map.distance([lat, lon], [p.lat, p.lon]);
-                            if (distancia <= radius) {
-                                const popupContent = `
-      <div style="
-        width: 220px;
-        padding: 10px;
-        border-radius: 10px;
-        background: #fff;
-        box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-        font-family: sans-serif;
-      ">
-        <h3 style="margin: 0; font-size: 16px; color: #2a7ae2;">${p.nombre}</h3>
-        <p style="margin: 5px 0;"><strong>Cancha:</strong> ${p.cancha}</p>
-        <p style="margin: 5px 0;"><strong>Integrantes:</strong> ${p.integrantes}/10</p>
-        <p style="margin: 5px 0;"><strong>Horario:</strong> ${p.horario}</p>
-        <button style="
-          background: #2a7ae2;
-          color: white;
-          border: none;
-          border-radius: 6px;
-          padding: 6px 10px;
-          cursor: pointer;
-          margin-top: 6px;
-        ">Unirme</button>
-      </div>
-    `;
-
-                                L.marker([p.lat, p.lon])
-                                    .addTo(map)
-                                    .bindPopup(popupContent, { maxWidth: 240 });
-                            }
-                        });
-
-                    },
-                    (err) => {
-                        alert("No se pudo obtener la ubicación: " + err.message);
-                    }
-                );
-            };
-        </script>
+        </div>
     </main>
     <footer>
         <p>&copy;

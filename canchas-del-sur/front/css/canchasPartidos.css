@@ -65,10 +65,30 @@ footer {
     }
 }
 
-#map {
-    height: 70%;
+
+#mapaContainer {
+    display: grid;
+    height: 100%;
     width: 100%;
-    margin: 1rem;
-    justify-self: center;
-    align-self: center;
+    padding: 1rem;
+    gap: 1rem;
+    box-sizing: border-box;
+    grid-template-columns: 2fr 1fr;
+
+    #map {
+        grid-column: 1 / 2;
+        height: 100%;
+        width: 100%;
+        justify-self: center;
+        align-self: center;
+
+    }
+
+    #seleccionMapa {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        grid-column: 2 / 2;
+    }
 }
