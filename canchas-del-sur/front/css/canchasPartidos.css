@@ -2,6 +2,7 @@ body {
     margin: 0;
     padding: 0;
     position: relative;
+    font-family: "Segoe UI", sans-serif;
 }
 
 header {
@@ -65,10 +66,45 @@ footer {
     }
 }
 
-#map {
-    height: 70%;
+
+#mapaContainer {
+    display: grid;
+    height: 100%;
     width: 100%;
-    margin: 1rem;
-    justify-self: center;
-    align-self: center;
+    padding: 1rem;
+    gap: 1rem;
+    box-sizing: border-box;
+    grid-template-columns: 2fr 1fr;
+
+    #map {
+        grid-column: 1 / 2;
+        height: 100%;
+        width: 100%;
+        justify-self: center;
+        align-self: center;
+
+    }
+
+    #seleccionMapa {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        grid-column: 2 / 2;
+    }
 }
+        #btnBuscarCanchasMapa {
+            background: rgb(2, 133, 65);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            padding: 10px 16px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        #btnBuscarCanchasMapa:hover {
+            background: #175f38;
+        }
