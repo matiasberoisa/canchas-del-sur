@@ -41,12 +41,11 @@ window.onload = function () {
         areaValue.textContent = area.value;
         currentRadius = area.value * 100; // Convertir km a metros
 
-        // Eliminar el círculo anterior si existe
         if (currentCircle) {
           map.removeLayer(currentCircle);
         }
 
-        // Crear nuevo círculo con el radio actualizado
+
         currentCircle = L.circle([lat, lon], {
           radius: currentRadius,
           color: "blue",
