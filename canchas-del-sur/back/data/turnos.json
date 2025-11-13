@@ -1,0 +1,10 @@
+[
+    {
+        "idCancha":1,
+        "tipoCancha": 1,
+        "nroTurno": 1,
+        "usuario":"",
+        "fecha": "10/02",
+        "hora": "7:00 PM"
+    }
+]

@@ -1,0 +1,17 @@
+[
+   {
+            "id":1,
+            "user":"admin",
+            "nombre":"Yerbabrava",
+            "apellido":"Gonzalez",
+            "email":"",
+            "password":"admin"
+        },
+    { "id":2,
+            "user":"usuario",
+            "nombre":"Yerbabrava",
+            "apellido":"Gonzalez",
+            "email":"",
+            "password":"123"
+    }
+]

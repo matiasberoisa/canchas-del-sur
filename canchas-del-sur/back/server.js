@@ -10,6 +10,9 @@ const app = express();
 //Obtengo el canchas.json  y tiposCanchasDisponibles.json
 const canchas = require("./data/canchas.json");
 const canchasInicio = require("./data/tiposCanchasDisponibles.json");
+const usuarios= require("./data/usuarios.json");
+const turnos= require("./data/turnos.json");
+const { console } = require("inspector");
 const partidos = [
   {
     nombre: "Partido 1",
@@ -36,11 +39,8 @@ const partidos = [
     horario: "22:00 hs",
   },
 ];
-app.use(express.static(path.join(__dirname, "../front")));
+
 app.use(express.json());
-app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "../front/index.html"));
-});
 
 //Devuelvo las canchas
 app.get("/api/canchas", (req, res) => {
@@ -51,10 +51,49 @@ app.get("/api/canchas", (req, res) => {
 app.get("/api/canchasInicio", (req, res) => {
   res.json(canchasInicio);
 });
+
+//Login
+app.post("/api/login"  , (req, res) => {
+const { username, password } = req.body;
+const user = usuarios.find(u => u.user === username && u.password === password);
+if(user &&user.id){
+  res.status(200).json({ success: true, message: "Login exitoso", userId: user.id });
+}else{
+  res.status(401).json({ success: false, message: "Credenciales inválidas" });
+}
+});
+
+//Turnos
+app.get("/api/turnos", (req, res) => {
+  const abr=req.query;
+  const cancha = req.query.tipoCancha;
+  const fechaInicio= req.query.fechaDesdeTurno;
+  const fechaFin= req.query.fechaHastaTurno;
+  const horaInicio= req.query.horaInicioTurno;
+  const horaFin= req.query.horaFinTurno;
+
+const turnosFiltrados = turnos.filter(turno => {turno.tipoCancha === cancha &&
+  turno.fecha >= fechaInicio &&
+  turno.fecha <= fechaFin &&
+  turno.hora >= horaInicio &&
+  turno.hora <= horaFin
+});
+
+res.send(turnosFiltrados);
+});
+
+
 app.post("/api/canchasBusqueda", (req, res) => {
   const data = req.body;
   console.log("Datos recibidos en el servidor:", data);
   res.json(partidos)
+});
+
+
+app.use(express.static(path.join(__dirname, "../front")));
+
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "../front/index.html"));
 });
 
 app.listen(port, host, () => {
