@@ -1,0 +1,110 @@
+body {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    font-family: "Segoe UI", sans-serif;
+}
+
+header {
+    background-color: rgb(2, 133, 65);
+    padding: 1rem;
+    display: flex;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 12px 0px;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 2000;
+
+    img {
+        width: 100px;
+        height: 50px;
+        cursor: pointer;
+    }
+
+    ul {
+        list-style: none;
+        display: flex;
+        gap: 1rem;
+    }
+
+    a {
+        text-decoration: none;
+        color: white;
+    }
+
+    li {
+        a {
+            font-size: 20px;
+        }
+
+        transition: 0.3s;
+
+        &:hover {
+
+            transform: scale(1.1);
+        }
+
+        font-weight: bold;
+    }
+
+    h1 {
+        margin: 0%;
+        color: white;
+    }
+
+}
+
+footer {
+    background-color: rgb(2, 133, 65);
+    color: white;
+    text-align: center;
+
+    p {
+        padding: 1rem;
+        margin: 0;
+    }
+}
+
+
+#mapaContainer {
+    display: grid;
+    height: 100%;
+    width: 100%;
+    padding: 1rem;
+    gap: 1rem;
+    box-sizing: border-box;
+    grid-template-columns: 2fr 1fr;
+
+    #map {
+        grid-column: 1 / 2;
+        height: 100%;
+        width: 100%;
+        justify-self: center;
+        align-self: center;
+
+    }
+
+    #seleccionMapa {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        grid-column: 2 / 2;
+    }
+}
+        #btnBuscarCanchasMapa {
+            background: rgb(2, 133, 65);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            padding: 10px 16px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        #btnBuscarCanchasMapa:hover {
+            background: #175f38;
+        }

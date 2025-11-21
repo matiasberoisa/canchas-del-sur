@@ -1,5 +1,7 @@
-html {
-    height: 100%;
+body {
+    margin: 0;
+    padding: 0;
+font-family: "Segoe UI", sans-serif;
 }
 
 header {
@@ -9,6 +11,9 @@ header {
     box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 12px 0px;
     justify-content: space-between;
     align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 
     img {
         width: 100px;
@@ -46,26 +51,7 @@ header {
         margin: 0%;
         color: white;
     }
-}
 
-
-
-
-main {
-    overflow: auto;
-    height: 100%;
-    width: 100%;
-
-}
-
-body {
-    height: 100%;
-    margin: 0%;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    font-family: "Rubik", sans-serif;
-    font-weight: 400;
 }
 
 footer {
@@ -73,8 +59,13 @@ footer {
     color: white;
     text-align: center;
 
-
+    p {
+        padding: 1rem;
+        margin: 0;
+    }
 }
+
+
 
 #canchaDetalle {
     display: flex;

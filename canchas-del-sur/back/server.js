@@ -6,175 +6,55 @@ const host = "localhost";
 const port = 3030;
 
 const app = express();
-const canchas = [
+
+//Obtengo el canchas.json  y tiposCanchasDisponibles.json
+const canchas = require("./data/canchas.json");
+const canchasInicio = require("./data/tiposCanchasDisponibles.json");
+const partidos = [
   {
-    id: 1,
-    tipo: "Futbol 5",
-    ubicacion: "Neuquén, Complejo Sicolo",
-    imagen: "../utils/images/canchas/cancha2.jfif",
-    diasDisponibles: [
-      {
-        fecha: "10/02",
-        dia: "Lunes",
-        horarios: ["7:00 PM", "8:00 PM", "9:00 PM"],
-      },
-      {
-        fecha: "11/02",
-        dia: "Martes",
-        horarios: ["8:00 PM", "9:00 PM", "10:00 PM"],
-      },
-      {
-        fecha: "12/02",
-        dia: "Miércoles",
-        horarios: ["6:30 PM", "8:00 PM", "9:30 PM"],
-      },
-      {
-        fecha: "13/02",
-        dia: "Jueves",
-        horarios: ["7:00 PM", "8:30 PM", "10:00 PM"],
-      },
-      {
-        fecha: "14/02",
-        dia: "Viernes",
-        horarios: ["8:00 PM", "9:00 PM", "11:00 PM"],
-      },
-      {
-        fecha: "15/02",
-        dia: "Sábado",
-        horarios: ["5:00 PM", "7:00 PM", "9:00 PM", "10:00 PM"],
-      },
-      {
-        fecha: "16/02",
-        dia: "Domingo",
-        horarios: ["6:00 PM", "8:00 PM", "10:00 PM"],
-      },
-    ],
-    horarios: ["7:00 PM", "8:00 PM", "9:00 PM"],
-    descripcion: "Cancha de césped sintético, iluminación, parrillas y duchas.",
-    servicios: [
-      { nombre: "Parrilla", icon: '<i class="fa-solid fa-utensils"></i>' },
-      { nombre: "Vestuarios", icon: '<i class="fa-solid fa-user-alt"></i>' },
-      {
-        nombre: "Estacionamiento",
-        icon: '<i class="fa-solid fa-car-side"></i>',
-      },
-      { nombre: "Iluminación", icon: '<i class="fa-solid fa-lightbulb"></i>' },
-    ],
+    nombre: "Partido 1",
+    lat: -38.92855399999999,
+    lon: -68.08820399999999,
+    cancha: "Complejo El Sur",
+    integrantes: 7,
+    horario: "21:00 hs",
   },
   {
-    id: 2,
-    tipo: "Futbol 8",
-    ubicacion: "Plottier, Club Deportivo",
-    imagen: "../utils/images/canchas/cancha3.jfif",
-    diasDisponibles: [
-      {
-        fecha: "10/02",
-        dia: "Lunes",
-        horarios: ["6:00 PM", "7:30 PM", "9:00 PM"],
-      },
-      {
-        fecha: "11/02",
-        dia: "Martes",
-        horarios: ["7:00 PM", "8:30 PM", "10:00 PM"],
-      },
-      {
-        fecha: "12/02",
-        dia: "Miércoles",
-        horarios: ["6:30 PM", "8:00 PM", "9:30 PM"],
-      },
-      {
-        fecha: "13/02",
-        dia: "Jueves",
-        horarios: ["7:00 PM", "8:30 PM", "10:30 PM"],
-      },
-      {
-        fecha: "14/02",
-        dia: "Viernes",
-        horarios: ["8:00 PM", "9:30 PM", "11:00 PM"],
-      },
-      {
-        fecha: "15/02",
-        dia: "Sábado",
-        horarios: ["5:30 PM", "7:30 PM", "9:30 PM", "11:30 PM"],
-      },
-      {
-        fecha: "16/02",
-        dia: "Domingo",
-        horarios: ["6:00 PM", "8:00 PM", "10:00 PM"],
-      },
-    ],
-    horarios: ["6:00 PM", "7:30 PM", "9:00 PM"],
-    descripcion: "Cancha de fútbol 8 con césped natural y tribunas.",
-    servicios: [
-      { nombre: "Buffet", icon: '<i class="fa-solid fa-drumstick-bite"></i>' },
-      {
-        nombre: "Estacionamiento",
-        icon: '<i class="fa-solid fa-car-side"></i>',
-      },
-      { nombre: "Tribunas", icon: '<i class="fa-solid fa-chair"></i>' },
-    ],
+    nombre: "Partido 2",
+    lat: -38.963553999999995,
+    lon: -68.10320399999999,
+    cancha: "Fútbol City",
+    integrantes: 9,
+    horario: "19:30 hs",
   },
   {
-    id: 3,
-    tipo: "Futbol 11",
-    ubicacion: "Neuquén, Estadio Central",
-    imagen: "../utils/images/canchas/cancha2.jfif",
-    diasDisponibles: [
-      {
-        fecha: "10/02",
-        dia: "Lunes",
-        horarios: ["5:30 PM", "7:00 PM", "8:30 PM", "10:00 PM"],
-      },
-      {
-        fecha: "11/02",
-        dia: "Martes",
-        horarios: ["6:00 PM", "7:30 PM", "9:00 PM"],
-      },
-      {
-        fecha: "12/02",
-        dia: "Miércoles",
-        horarios: ["6:30 PM", "8:00 PM", "9:30 PM"],
-      },
-      {
-        fecha: "13/02",
-        dia: "Jueves",
-        horarios: ["7:00 PM", "8:30 PM", "10:00 PM"],
-      },
-      {
-        fecha: "14/02",
-        dia: "Viernes",
-        horarios: ["7:30 PM", "9:00 PM", "10:30 PM", "11:30 PM"],
-      },
-      {
-        fecha: "15/02",
-        dia: "Sábado",
-        horarios: ["5:00 PM", "7:00 PM", "9:00 PM", "11:00 PM"],
-      },
-      {
-        fecha: "16/02",
-        dia: "Domingo",
-        horarios: ["6:00 PM", "8:00 PM", "10:00 PM"],
-      },
-    ],
-    horarios: ["7:00 PM", "8:30 PM", "10:00 PM"],
-    descripcion:
-      "Estadio profesional con césped natural y vestuarios completos.",
-    servicios: [
-      { nombre: "Vestuarios", icon: '<i class="fa-solid fa-user-alt"></i>' },
-      { nombre: "Tribunas", icon: '<i class="fa-solid fa-chair"></i>' },
-      {
-        nombre: "Estacionamiento",
-        icon: '<i class="fa-solid fa-car-side"></i>',
-      },
-      { nombre: "Buffet", icon: '<i class="fa-solid fa-drumstick-bite"></i>' },
-    ],
+    nombre: "Partido 3",
+    lat: -38.91855399999999,
+    lon: -68.108204,
+    cancha: "Cancha Norte",
+    integrantes: 5,
+    horario: "22:00 hs",
   },
 ];
-
 app.use(express.static(path.join(__dirname, "../front")));
-
+app.use(express.json());
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "../front/index.html"));
+});
+
+//Devuelvo las canchas
+app.get("/api/canchas", (req, res) => {
+  res.json(canchas);
+});
+
+//Devuelvo las canchas que se usan en el index para mostrar los 3 tipos
+app.get("/api/canchasInicio", (req, res) => {
+  res.json(canchasInicio);
+});
+app.post("/api/canchasBusqueda", (req, res) => {
+  const data = req.body;
+  console.log("Datos recibidos en el servidor:", data);
+  res.json(partidos)
 });
 
 app.listen(port, host, () => {
