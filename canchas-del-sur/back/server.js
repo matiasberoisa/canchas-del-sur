@@ -1,6 +1,25 @@
 const express = require("express");
 const router = express.Router([]);
 const path = require("path");
+class Turno {
+  id;
+  tipoCancha;
+  fechaDesde;
+  fechaHasta;
+  dia;
+  horarioDesde;
+  horarioHasta;
+
+  constructor(iden, tiCa, feDe, feHa, d, hoDe, hoHa) {
+    this.id = iden;
+    this.tipoCancha = tiCa;
+    this.fechaDesde = feDe;
+    this.fechaHasta = feHa;
+    this.dia = d;
+    this.horarioDesde = hoDe;
+    this.horarioHasta = hoHa;
+  }
+}
 
 const host = "localhost";
 const port = 3030;
@@ -10,6 +29,8 @@ const app = express();
 //Obtengo el canchas.json  y tiposCanchasDisponibles.json
 const canchas = require("./data/canchas.json");
 const canchasInicio = require("./data/tiposCanchasDisponibles.json");
+const usuarios = require("./data/usuarios.json");
+const rutaTurnos = path.join(process.cwd(), "data", "turnos.json");
 const partidos = [
   {
     nombre: "Partido 1",
@@ -54,9 +75,32 @@ app.get("/api/canchasInicio", (req, res) => {
 app.post("/api/canchasBusqueda", (req, res) => {
   const data = req.body;
   console.log("Datos recibidos en el servidor:", data);
-  res.json(partidos)
+  res.json(partidos);
 });
 
 app.listen(port, host, () => {
   console.log(`servidor levantado en http://${host}:${port}`);
+});
+
+//POST de usuarios
+
+app.post("/login", (req, res) => {
+  const { username, password } = req.body;
+  console.log("usuario recibido: ", user);
+  const userFound = usuarios.find(
+    (u) => u.username == username && u.password == password
+  );
+  if (userFound) {
+    res.json({ username: username, password: password });
+  } else {
+    res.status(401).send("usuario o contraseña incorrecto");
+  }
+});
+
+//metodos de reservas
+
+app.post("/turnos", (req, res) => {
+  const turno = new Turno(req.body);
+  turno.push(rutaTurnos);
+  console.log(res.status);
 });
