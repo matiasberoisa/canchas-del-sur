@@ -1,0 +1,66 @@
+[
+  {
+    "id": 9,
+    "canchaId": 1,
+    "fecha": "2025-12-11T03:00:00.000Z",
+    "horarioDesde": "10:00",
+    "horarioHasta": "12:00",
+    "reservaId": null
+  },
+  {
+    "id": 10,
+    "canchaId": 1,
+    "fecha": "2025-12-11T03:00:00.000Z",
+    "horarioDesde": "10:00",
+    "horarioHasta": "12:00",
+    "reservaId": null
+  },
+  {
+    "id": 11,
+    "canchaId": 1,
+    "fecha": "2025-12-11T03:00:00.000Z",
+    "horarioDesde": "10:00",
+    "horarioHasta": "12:00",
+    "reservaId": null
+  },
+  {
+    "id": 12,
+    "canchaId": 1,
+    "fecha": "2025-12-11T03:00:00.000Z",
+    "horarioDesde": "10:00",
+    "horarioHasta": "12:00",
+    "reservaId": null
+  },
+  {
+    "id": 13,
+    "canchaId": 1,
+    "fecha": "2025-12-11T03:00:00.000Z",
+    "horarioDesde": "10:00",
+    "horarioHasta": "12:00",
+    "reservaId": null
+  },
+  {
+    "id": 14,
+    "canchaId": 1,
+    "fecha": "2025-12-11T03:00:00.000Z",
+    "horarioDesde": "10:00",
+    "horarioHasta": "12:00",
+    "reservaId": null
+  },
+  {
+    "id": 15,
+    "canchaId": 1,
+    "fecha": "2025-12-11T03:00:00.000Z",
+    "horarioDesde": "10:00",
+    "horarioHasta": "12:00",
+    "reservaId": null
+  },
+  {
+    "id": 16,
+    "canchaId": 1,
+    "fecha": "2025-12-11T03:00:00.000Z",
+    "horarioDesde": "10:00",
+    "horarioHasta": "12:00",
+    "reservaId": null
+  }
+]
