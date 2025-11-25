@@ -1,62 +1,24 @@
 const express = require("express");
-const router = express.Router([]);
+
+const fs = require("fs");
 const path = require("path");
-class Turno {
-  id;
-  tipoCancha;
-  fechaDesde;
-  fechaHasta;
-  dia;
-  horarioDesde;
-  horarioHasta;
-
-  constructor(iden, tiCa, feDe, feHa, d, hoDe, hoHa) {
-    this.id = iden;
-    this.tipoCancha = tiCa;
-    this.fechaDesde = feDe;
-    this.fechaHasta = feHa;
-    this.dia = d;
-    this.horarioDesde = hoDe;
-    this.horarioHasta = hoHa;
-  }
-}
-
 const host = "localhost";
 const port = 3030;
-
 const app = express();
 
-//Obtengo el canchas.json  y tiposCanchasDisponibles.json
 const canchas = require("./data/canchas.json");
 const canchasInicio = require("./data/tiposCanchasDisponibles.json");
 const usuarios = require("./data/usuarios.json");
-const rutaTurnos = path.join(process.cwd(), "data", "turnos.json");
-const partidos = [
-  {
-    nombre: "Partido 1",
-    lat: -38.92855399999999,
-    lon: -68.08820399999999,
-    cancha: "Complejo El Sur",
-    integrantes: 7,
-    horario: "21:00 hs",
-  },
-  {
-    nombre: "Partido 2",
-    lat: -38.963553999999995,
-    lon: -68.10320399999999,
-    cancha: "Fútbol City",
-    integrantes: 9,
-    horario: "19:30 hs",
-  },
-  {
-    nombre: "Partido 3",
-    lat: -38.91855399999999,
-    lon: -68.108204,
-    cancha: "Cancha Norte",
-    integrantes: 5,
-    horario: "22:00 hs",
-  },
-];
+
+const reservas = require("./data/reservas.json");
+const archivoReservas = path.join(__dirname, "./data/reservas.json");
+
+const archivoTurnos = path.join(__dirname, "./data/turnos.json");
+const turnos = require("./data/turnos.json");
+
+const Turno = require("./tipos/Turno.js");
+const Reserva = require("./tipos/Reserva.js");
+
 app.use(express.static(path.join(__dirname, "../front")));
 app.use(express.json());
 app.get("/", (req, res) => {
@@ -78,29 +40,71 @@ app.post("/api/canchasBusqueda", (req, res) => {
   res.json(partidos);
 });
 
-app.listen(port, host, () => {
-  console.log(`servidor levantado en http://${host}:${port}`);
-});
-
 //POST de usuarios
 
 app.post("/login", (req, res) => {
   const { username, password } = req.body;
-  console.log("usuario recibido: ", user);
+
   const userFound = usuarios.find(
     (u) => u.username == username && u.password == password
   );
   if (userFound) {
-    res.json({ username: username, password: password });
+    res.json({ username: userFound.username, id: userFound.id });
   } else {
     res.status(401).send("usuario o contraseña incorrecto");
   }
 });
+app.post("/turnos/reservar", (req, res) => {
+  const { idTurno, idUsuario } = req.body;
+  const turno = turnos.find((t) => t.id === idTurno);
+  if (!turno) {
+    return res.status(404).send("El turno no existe");
+  }
+  if (turno.reservaId) {
+    return res.status(400).send("El turno ya está reservado");
+  }
+  let newId = reservas[turnos.length - 1]?.id + 1 || 1;
+  const reserva = new Reserva(newId, idTurno, idUsuario);
 
-//metodos de reservas
-
+  fs.writeFileSync(archivoReservas, JSON.stringify(reserva, null, 2), "utf8");
+});
+app.get("/turnos", (req, res) => {
+  res.status(200).json(turnos);
+});
 app.post("/turnos", (req, res) => {
-  const turno = new Turno(req.body);
-  turno.push(rutaTurnos);
-  console.log(res.status);
+  const dataTurnos = req.body;
+  let nuevosTurnos = [];
+  const diaInicio = new Date(dataTurnos.fechaDesde);
+  const diaHasta = new Date(dataTurnos.fechaHasta);
+
+  const { dias, horarioDesde, horarioHasta, idCancha } = dataTurnos;
+
+  let comienzo = new Date(diaInicio);
+  let newId = turnos[turnos.length - 1]?.id + 1 || 1;
+  while (comienzo <= diaHasta) {
+    const diaSemana = comienzo.getDay();
+    if (dias.includes(diaSemana)) {
+      let nuevoTurno = new Turno(
+        newId,
+        idCancha,
+        comienzo,
+        horarioDesde,
+        horarioHasta
+      );
+      nuevosTurnos.push(nuevoTurno);
+      newId++;
+    }
+    comienzo.setDate(comienzo.getDate() + 1);
+  }
+
+  fs.writeFileSync(
+    archivoTurnos,
+    JSON.stringify(nuevosTurnos, null, 2),
+    "utf8"
+  );
+  res.status(201).json(nuevosTurnos);
+});
+
+app.listen(port, host, () => {
+  console.log(`servidor levantado en http://${host}:${port}`);
 });
