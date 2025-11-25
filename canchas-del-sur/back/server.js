@@ -59,10 +59,11 @@ app.post("/turnos/reservar", (req, res) => {
   if (turno.reservaId) {
     return res.status(400).send("El turno ya está reservado");
   }
-  let newId = reservas[turnos.length - 1]?.id + 1 || 1;
+  let newId = reservas[reservas.length - 1]?.id + 1 || 1;
   const reserva = new Reserva(newId, idTurno, idUsuario);
 
   fs.writeFileSync(archivoReservas, JSON.stringify(reserva, null, 2), "utf8");
+  res.status(201).json(reserva);
 });
 app.get("/turnos", (req, res) => {
   res.status(200).json(turnos);
