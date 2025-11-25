@@ -25,12 +25,10 @@ app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "../front/index.html"));
 });
 
-//Devuelvo las canchas
 app.get("/api/canchas", (req, res) => {
   res.json(canchas);
 });
 
-//Devuelvo las canchas que se usan en el index para mostrar los 3 tipos
 app.get("/api/canchasInicio", (req, res) => {
   res.json(canchasInicio);
 });
@@ -39,8 +37,6 @@ app.post("/api/canchasBusqueda", (req, res) => {
   console.log("Datos recibidos en el servidor:", data);
   res.json(partidos);
 });
-
-//POST de usuarios
 
 app.post("/login", (req, res) => {
   const { username, password } = req.body;
@@ -51,7 +47,7 @@ app.post("/login", (req, res) => {
   if (userFound) {
     res.json({ username: userFound.username, id: userFound.id });
   } else {
-    res.status(401).send("usuario o contraseña incorrecto");
+    res.status(401).send("Usuario o contraseña incorrecto");
   }
 });
 app.post("/turnos/reservar", (req, res) => {
