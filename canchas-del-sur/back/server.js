@@ -1,53 +1,31 @@
 const express = require("express");
-const router = express.Router([]);
-const path = require("path");
 
+const fs = require("fs");
+const path = require("path");
 const host = "localhost";
 const port = 3030;
-
 const app = express();
 
-//Obtengo el canchas.json  y tiposCanchasDisponibles.json
 const canchas = require("./data/canchas.json");
 const canchasInicio = require("./data/tiposCanchasDisponibles.json");
-const usuarios= require("./data/usuarios.json");
-const turnos= require("./data/turnos.json");
-const { console } = require("inspector");
-const partidos = [
-  {
-    nombre: "Partido 1",
-    lat: -38.92855399999999,
-    lon: -68.08820399999999,
-    cancha: "Complejo El Sur",
-    integrantes: 7,
-    horario: "21:00 hs",
-  },
-  {
-    nombre: "Partido 2",
-    lat: -38.963553999999995,
-    lon: -68.10320399999999,
-    cancha: "Fútbol City",
-    integrantes: 9,
-    horario: "19:30 hs",
-  },
-  {
-    nombre: "Partido 3",
-    lat: -38.91855399999999,
-    lon: -68.108204,
-    cancha: "Cancha Norte",
-    integrantes: 5,
-    horario: "22:00 hs",
-  },
-];
+const usuarios = require("./data/usuarios.json");
 
+const reservas = require("./data/reservas.json");
+const archivoReservas = path.join(__dirname, "./data/reservas.json");
+
+const archivoTurnos = path.join(__dirname, "./data/turnos.json");
+const turnos = require("./data/turnos.json");
+
+const Turno = require("./tipos/Turno.js");
+const Reserva = require("./tipos/Reserva.js");
+
+app.use(express.static(path.join(__dirname, "../front")));
 app.use(express.json());
 
-//Devuelvo las canchas
 app.get("/api/canchas", (req, res) => {
   res.json(canchas);
 });
 
-//Devuelvo las canchas que se usan en el index para mostrar los 3 tipos
 app.get("/api/canchasInicio", (req, res) => {
   res.json(canchasInicio);
 });
@@ -86,7 +64,70 @@ res.send(turnosFiltrados);
 app.post("/api/canchasBusqueda", (req, res) => {
   const data = req.body;
   console.log("Datos recibidos en el servidor:", data);
-  res.json(partidos)
+  res.json(partidos);
+});
+
+//Login
+app.post("/api/login"  , (req, res) => {
+const { username, password } = req.body;
+const user = usuarios.find(u => u.user === username && u.password === password);
+if(user &&user.id){
+  res.status(200).json({ success: true, message: "Login exitoso", userId: user.id });
+}else{
+  res.status(401).json({ success: false, message: "Credenciales inválidas" });
+}
+});
+
+app.post("/turnos/reservar", (req, res) => {
+  const { idTurno, idUsuario } = req.body;
+  const turno = turnos.find((t) => t.id === idTurno);
+  if (!turno) {
+    return res.status(404).send("El turno no existe");
+  }
+  if (turno.reservaId) {
+    return res.status(400).send("El turno ya está reservado");
+  }
+  let newId = reservas[reservas.length - 1]?.id + 1 || 1;
+  const reserva = new Reserva(newId, idTurno, idUsuario);
+
+  fs.writeFileSync(archivoReservas, JSON.stringify(reserva, null, 2), "utf8");
+  res.status(201).json(reserva);
+});
+app.get("/turnos", (req, res) => {
+  res.status(200).json(turnos);
+});
+app.post("/turnos", (req, res) => {
+  const dataTurnos = req.body;
+  let nuevosTurnos = [];
+  const diaInicio = new Date(dataTurnos.fechaDesde);
+  const diaHasta = new Date(dataTurnos.fechaHasta);
+
+  const { dias, horarioDesde, horarioHasta, idCancha } = dataTurnos;
+
+  let comienzo = new Date(diaInicio);
+  let newId = turnos[turnos.length - 1]?.id + 1 || 1;
+  while (comienzo <= diaHasta) {
+    const diaSemana = comienzo.getDay();
+    if (dias.includes(diaSemana)) {
+      let nuevoTurno = new Turno(
+        newId,
+        idCancha,
+        comienzo,
+        horarioDesde,
+        horarioHasta
+      );
+      nuevosTurnos.push(nuevoTurno);
+      newId++;
+    }
+    comienzo.setDate(comienzo.getDate() + 1);
+  }
+
+  fs.writeFileSync(
+    archivoTurnos,
+    JSON.stringify(nuevosTurnos, null, 2),
+    "utf8"
+  );
+  res.status(201).json(nuevosTurnos);
 });
 
 
