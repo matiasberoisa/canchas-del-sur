@@ -21,7 +21,8 @@
                 <li><a href="../index.html#contacto">Contacto</a></li>
                 <li><a href="canchasCatalogo.html">Reserva tu cancha</a></li>
                 <li><a href="canchasPartidos.html">Unirme</a></li>
-                <li><a href="turnos.html">Turnos</a></li>
+                 <li><a href="turnos.html">Turnos</a></li>
+                <li><a href="#" onclick="logout()">Salir</a></li>
             </ul>
         </nav>
     </header>
@@ -66,6 +67,17 @@
             </form>
         </article>
     </main>
+    <script src="../js/auth.js"></script>
+    <script>
+function logout() {
+    localStorage.removeItem("userId");
+    localStorage.removeItem("username");
+    window.location.href = "http://localhost:3030/index.html";
+}
+</script>
+    <script>    
+        requiereLogin();
+    </script>
     <footer>
         <p>&copy;
             2023 Canchas del Sur</p>
