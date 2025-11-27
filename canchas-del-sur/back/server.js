@@ -19,8 +19,10 @@ const turnos = require("./data/turnos.json");
 const Turno = require("./tipos/Turno.js");
 const Reserva = require("./tipos/Reserva.js");
 
-app.use(express.static(path.join(__dirname, "../front")));
+
 app.use(express.json());
+app.use(express.static(path.join(__dirname, "../front")));
+app.use("/vistas", express.static(path.join(__dirname, "../front/vistas")));
 
 app.get("/api/canchas", (req, res) => {
   res.json(canchas);
@@ -29,37 +31,6 @@ app.get("/api/canchas", (req, res) => {
 app.get("/api/canchasInicio", (req, res) => {
   res.json(canchasInicio);
 });
-
-//Login
-app.post("/api/login"  , (req, res) => {
-const { username, password } = req.body;
-const user = usuarios.find(u => u.user === username && u.password === password);
-if(user &&user.id){
-  res.status(200).json({ success: true, message: "Login exitoso", userId: user.id });
-}else{
-  res.status(401).json({ success: false, message: "Credenciales inválidas" });
-}
-});
-
-//Turnos
-app.get("/api/turnos", (req, res) => {
-  const abr=req.query;
-  const cancha = req.query.tipoCancha;
-  const fechaInicio= req.query.fechaDesdeTurno;
-  const fechaFin= req.query.fechaHastaTurno;
-  const horaInicio= req.query.horaInicioTurno;
-  const horaFin= req.query.horaFinTurno;
-
-const turnosFiltrados = turnos.filter(turno => {turno.tipoCancha === cancha &&
-  turno.fecha >= fechaInicio &&
-  turno.fecha <= fechaFin &&
-  turno.hora >= horaInicio &&
-  turno.hora <= horaFin
-});
-
-res.send(turnosFiltrados);
-});
-
 
 app.post("/api/canchasBusqueda", (req, res) => {
   const data = req.body;
@@ -70,7 +41,7 @@ app.post("/api/canchasBusqueda", (req, res) => {
 //Login
 app.post("/api/login"  , (req, res) => {
 const { username, password } = req.body;
-const user = usuarios.find(u => u.user === username && u.password === password);
+const user = usuarios.find(u => u.username === username && u.password === password);
 if(user &&user.id){
   res.status(200).json({ success: true, message: "Login exitoso", userId: user.id });
 }else{
@@ -130,8 +101,6 @@ app.post("/turnos", (req, res) => {
   res.status(201).json(nuevosTurnos);
 });
 
-
-app.use(express.static(path.join(__dirname, "../front")));
 
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "../front/index.html"));
