@@ -19,11 +19,10 @@ const turnos = require("./data/turnos.json");
 const Turno = require("./tipos/Turno.js");
 const Reserva = require("./tipos/Reserva.js");
 
-app.use(express.static(path.join(__dirname, "../front")));
+
 app.use(express.json());
-app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "../front/index.html"));
-});
+app.use(express.static(path.join(__dirname, "../front")));
+app.use("/vistas", express.static(path.join(__dirname, "../front/vistas")));
 
 app.get("/api/canchas", (req, res) => {
   res.json(canchas);
@@ -32,24 +31,24 @@ app.get("/api/canchas", (req, res) => {
 app.get("/api/canchasInicio", (req, res) => {
   res.json(canchasInicio);
 });
+
 app.post("/api/canchasBusqueda", (req, res) => {
   const data = req.body;
   console.log("Datos recibidos en el servidor:", data);
   res.json(partidos);
 });
 
-app.post("/login", (req, res) => {
-  const { username, password } = req.body;
-
-  const userFound = usuarios.find(
-    (u) => u.username == username && u.password == password
-  );
-  if (userFound) {
-    res.json({ username: userFound.username, id: userFound.id });
-  } else {
-    res.status(401).send("Usuario o contraseña incorrecto");
-  }
+//Login
+app.post("/api/login"  , (req, res) => {
+const { username, password } = req.body;
+const user = usuarios.find(u => u.username === username && u.password === password);
+if(user &&user.id){
+  res.status(200).json({ success: true, message: "Login exitoso", userId: user.id });
+}else{
+  res.status(401).json({ success: false, message: "Credenciales inválidas" });
+}
 });
+
 app.post("/turnos/reservar", (req, res) => {
   const { idTurno, idUsuario } = req.body;
   const turno = turnos.find((t) => t.id === idTurno);
@@ -100,6 +99,11 @@ app.post("/turnos", (req, res) => {
     "utf8"
   );
   res.status(201).json(nuevosTurnos);
+});
+
+
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "../front/index.html"));
 });
 
 app.listen(port, host, () => {
