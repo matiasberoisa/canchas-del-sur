@@ -93,18 +93,53 @@ footer {
         grid-column: 2 / 2;
     }
 }
-        #btnBuscarCanchasMapa {
-            background: rgb(2, 133, 65);
-            color: white;
-            border: none;
-            border-radius: 10px;
-            padding: 10px 16px;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background 0.2s;
-        }
 
-        #btnBuscarCanchasMapa:hover {
-            background: #175f38;
-        }
+#btnBuscarCanchasMapa {
+    background: rgb(2, 133, 65);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 16px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+#btnBuscarCanchasMapa:hover {
+    background: #175f38;
+}
+
+.login-container {
+    width: 300px;
+    margin: 40px auto;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.login-container input {
+    width: 90%;
+    margin: 10px 0;
+    padding: 10px;
+}
+
+.login-container button {
+    width: 100%;
+    padding: 10px;
+    background: #3b82f6;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.login-container button:hover {
+    background: #1d4ed8;
+}
+
+.error {
+    color: red;
+    margin-top: 10px;
+}

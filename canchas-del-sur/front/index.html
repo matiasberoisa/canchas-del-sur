@@ -1,119 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Canchas Del Sur</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="icon"  type="image/png" href="utils/images/logo.png">
-</head>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" type="image/png" href="utils/images/logo.png" />
+  </head>
 
-<body>
+  <body>
     <header>
-        <a href="index.html"><img src="utils/images/logo.png" alt="Canchas Del Sur Logo" class="logo"></a>
-        <h1 class="tituloHeader"> <a href="index.html">Canchas Del Sur</a></h1>
-        <nav>
-            <ul>
-                <li><a href="#nosotrosInfo">Sobre Nosotros</a></li>
-                <li><a href="#faq">FAQ</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-                <li><a href="vistas/canchasCatalogo.html">Reserva tu cancha</a></li>
-                <li><a href="vistas/canchasPartidos.html">Unirme</a></li>
-                <li><a href="vistas/turnos.html">Turnos</a></li>
-            </ul>
-        </nav>
+      <a href="index.html"
+        ><img
+          src="utils/images/logo.png"
+          alt="Canchas Del Sur Logo"
+          class="logo"
+      /></a>
+      <h1 class="tituloHeader"><a href="index.html">Canchas Del Sur</a></h1>
+      <nav>
+        <ul>
+          <li><a href="#nosotrosInfo">Sobre Nosotros</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+          <li><a href="vistas/canchasPartidos.html">Unirme</a></li>
+          <li><a href="vistas/turnos.html">Turnos</a></li>
+        </ul>
+      </nav>
     </header>
 
     <main>
-        <article id="home">
-            <div id="titulo">
-                <h2>El grupo se armó, las ganas están… ¿y la cancha?</h2>
-                <p>Poné la fecha, invitá a los pibes y nosotros te ponemos el césped</p>
-            </div>
+      <article id="home">
+        <div id="titulo">
+          <h2>El grupo se armó, las ganas están… ¿y la cancha?</h2>
+          <p>
+            Poné la fecha, invitá a los pibes y nosotros te ponemos el césped
+          </p>
+        </div>
 
-            <div id="carrusel">
-                <ul>
-                    <li><img src="utils/images/carrusel/futbol.jpg" alt="Cancha 1"></li>
-                    <li><img src="utils/images/carrusel/tenis.jpg" alt="Cancha 2"></li>
-                    <li><img src="utils/images/carrusel/futbol.jpg" alt="Cancha 1"></li>
-                    <li><img src="utils/images/carrusel/tenis.jpg" alt="Cancha 2"></li>
-                </ul>
-            </div>
-        </article>
-        <article id="nosotrosInfo">
-            <h2>El partido también arranca acá</h2>
-            <p>Organizar un partido suele ser un quilombo, pero jugarlo no debería serlo. En Canchas del Sur encontrás
-                tu cancha sin drama: rápido, fácil y seguro.</p>
-            <p> Fútbol, pádel, tenis, básquet… vos caés con tu equipo, nosotros te abrimos la puerta.
-                En Canchas del Sur no hay plan B: el partido se juega.</p>
+        <div id="carrusel">
+          <ul>
+            <li>
+              <img src="utils/images/carrusel/futbol.jpg" alt="Cancha 1" />
+            </li>
+            <li>
+              <img src="utils/images/carrusel/tenis.jpg" alt="Cancha 2" />
+            </li>
+            <li>
+              <img src="utils/images/carrusel/futbol.jpg" alt="Cancha 1" />
+            </li>
+            <li>
+              <img src="utils/images/carrusel/tenis.jpg" alt="Cancha 2" />
+            </li>
+          </ul>
+        </div>
+      </article>
+      <article id="nosotrosInfo">
+        <h2>El partido también arranca acá</h2>
+        <p>
+          Organizar un partido suele ser un quilombo, pero jugarlo no debería
+          serlo. En Canchas del Sur encontrás tu cancha sin drama: rápido, fácil
+          y seguro.
+        </p>
+        <p>
+          Fútbol, pádel, tenis, básquet… vos caés con tu equipo, nosotros te
+          abrimos la puerta. En Canchas del Sur no hay plan B: el partido se
+          juega.
+        </p>
+      </article>
+      <article id="canchasClasificacion">
+        <h3>Selecciona que cancha deseas reservar</h3>
+        <section id="canchas" class="canchas"></section>
+      </article>
 
+      <article class="faq" id="faq">
+        <h2>Preguntas Frecuentes</h2>
 
-        </article>
-        <article id="canchasClasificacion">
-            <h3>Selecciona que cancha deseas reservar</h3>
-            <section id="canchas" class="canchas"> 
-              
-            </section>
-
-        </article>
-
-        <article class="faq" id="faq">
-
-
-
-            <h2>Preguntas Frecuentes</h2>
-
-            <details style="border-top-left-radius: 8px; border-top-right-radius: 8px;">
-                <summary>¿Cómo puedo reservar una cancha?</summary>
-                <p>Para reservar una cancha, dirígete a la sección "Reserva tu Cancha" y sigue las instrucciones.
-                </p>
-            </details>
-            <details>
-                <summary>¿Es necesario registrarse para reservar una cancha?</summary>
-                <p>No es necesario registrarse para reservar una cancha, pero te recomendamos hacerlo para facilitar
-                    el
-                    proceso de reserva.</p>
-            </details>
-            <details>
-                <summary>¿Cuáles son los horarios disponibles para reservar?</summary>
-                <p>Los horarios disponibles varían según la cancha. Consulta la sección de reservas para ver los
-                    horarios específicos.</p>
-            </details>
-            <details style="border-bottom-left-radius: 8px; border-bottom-right-radius: 8px;">
-                <summary>¿Puedo cancelar o modificar mi reserva?</summary>
-                <p>Sí, puedes cancelar o modificar tu reserva hasta 24 horas antes del horario reservado.</p>
-            </details>
-
-
-        </article>
-        <article id="contacto">
-            <h2>¡Comunicate con nosotros!</h2>
-            <div id="contactoTextos">
-                <p>¿Tenés dudas, sugerencias o querés sumar tu complejo deportivo a nuestra plataforma?
-                    Nuestro equipo está listo para ayudarte y responder todas tus consultas.</p>
-                <p>Escribinos… y si pinta, armamos un partidito después.</p>
-            </div>
-            <form id="formContacto" action="">
-                <label for="">Nombre y Apellido</label>
-                <input type="text" id="" name="" placeholder="Nombre y Apellido" required>
-                <label for="">Email</label>
-                <input type="email" id="" name="" placeholder="Email" required>
-                <label for="">Mensaje</label>
-                <textarea id="" name="" rows="4" placeholder="Escribinos tu duda..." required></textarea>
-                <button  type="submit">Enviar</button>
-            </form>
-        </article>
+        <details
+          style="border-top-left-radius: 8px; border-top-right-radius: 8px"
+        >
+          <summary>¿Cómo puedo reservar una cancha?</summary>
+          <p>
+            Para reservar una cancha, dirígete a la sección "Reserva tu Cancha"
+            y sigue las instrucciones.
+          </p>
+        </details>
+        <details>
+          <summary>¿Es necesario registrarse para reservar una cancha?</summary>
+          <p>
+            No es necesario registrarse para reservar una cancha, pero te
+            recomendamos hacerlo para facilitar el proceso de reserva.
+          </p>
+        </details>
+        <details>
+          <summary>¿Cuáles son los horarios disponibles para reservar?</summary>
+          <p>
+            Los horarios disponibles varían según la cancha. Consulta la sección
+            de reservas para ver los horarios específicos.
+          </p>
+        </details>
+        <details
+          style="
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
+          "
+        >
+          <summary>¿Puedo cancelar o modificar mi reserva?</summary>
+          <p>
+            Sí, puedes cancelar o modificar tu reserva hasta 24 horas antes del
+            horario reservado.
+          </p>
+        </details>
+      </article>
+      <article id="contacto">
+        <h2>¡Comunicate con nosotros!</h2>
+        <div id="contactoTextos">
+          <p>
+            ¿Tenés dudas, sugerencias o querés sumar tu complejo deportivo a
+            nuestra plataforma? Nuestro equipo está listo para ayudarte y
+            responder todas tus consultas.
+          </p>
+          <p>Escribinos… y si pinta, armamos un partidito después.</p>
+        </div>
+        <form id="formContacto" action="">
+          <label for="">Nombre y Apellido</label>
+          <input
+            type="text"
+            id=""
+            name=""
+            placeholder="Nombre y Apellido"
+            required
+          />
+          <label for="">Email</label>
+          <input type="email" id="" name="" placeholder="Email" required />
+          <label for="">Mensaje</label>
+          <textarea
+            id=""
+            name=""
+            rows="4"
+            placeholder="Escribinos tu duda..."
+            required
+          ></textarea>
+          <button type="submit">Enviar</button>
+        </form>
+      </article>
     </main>
     <footer>
-        <p>&copy; 2025 CanchasDelSur. All rights reserved.</p>
+      <p>&copy; 2025 CanchasDelSur. All rights reserved.</p>
     </footer>
     <script src="../js/canchasDisponibles.js"></script>
     <script src="../js/auth.js"></script>
     <script>
-        agregarLi();
-        cargarYMostrarCanchas();
+      agregarLi();
+      cargarYMostrarCanchas();
     </script>
-</body>
-
+  </body>
 </html>

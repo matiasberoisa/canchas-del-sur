@@ -1,69 +1,72 @@
 <html>
+  <head>
+    <link rel="stylesheet" href="../css/canchasCatalogo.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha512-...."
+      crossorigin="anonymous"
+    />
+    <link rel="icon" type="image/png" href="utils/images/logo.png" />
+  </head>
 
-<head>
-    <link rel="stylesheet" href="../css/canchasCatalogo.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-        integrity="sha512-...." crossorigin="anonymous" />
-    <link rel="icon" type="image/png" href="utils/images/logo.png">
-</head>
-
-<body>
+  <body>
     <header>
-        <a href="../index.html"><img src="../utils/images/logo.png" alt="Canchas Del Sur Logo" class="logo"></a>
+      <a href="../index.html"
+        ><img
+          src="../utils/images/logo.png"
+          alt="Canchas Del Sur Logo"
+          class="logo"
+      /></a>
 
-        <h1 class="tituloHeader"> <a href="../index.html">Canchas Del Sur</a></h1>
-        <nav>
-            <ul>
-                <li><a href="../index.html#nosotrosInfo">Sobre Nosotros</a></li>
-                <li><a href="../index.html#faq">FAQ</a></li>
-                <li><a href="../index.html#contacto9">Contacto</a></li>
-                <li><a href="canchasCatalogo.html">Reserva tu cancha</a></li>
-                <li><a href="canchasPartidos.html">Unirme</a></li>
-                <li><a href="turnos.html">Turnos</a></li>
-            </ul>
-        </nav>
+      <h1 class="tituloHeader"><a href="../index.html">Canchas Del Sur</a></h1>
+      <nav>
+        <ul>
+          <li><a href="../index.html#nosotrosInfo">Sobre Nosotros</a></li>
+          <li><a href="../index.html#faq">FAQ</a></li>
+          <li><a href="../index.html#contacto9">Contacto</a></li>
+          <li><a href="canchasPartidos.html">Unirme</a></li>
+          <li><a href="turnos.html">Turnos</a></li>
+        </ul>
+      </nav>
     </header>
     <main>
-        <div id="buscador">
-            <form action="">
-                <input type="text" placeholder="Buscar...">
-                <select name="" id="">
-                    <option value="">Seleccionar tipo de cancha</option>
-                    <option value="F5">Futbol 5</option>
-                    <option value="F8">Futbol 8</option>
-                    <option value="F11">Futbol 11</option>
-                </select>
-                <select>
-                    <option value="">Seleccionar horario</option>
-                    <option value="9:00">9:00 PM</option>
-                    <option value="10:00">10:00 PM</option>
-                    <option value="11:00">11:00 PM</option>
-                </select>
-                <select name="" id="">
-                    <option value="">Seleccionar ciudad</option>
-                    <option value="ciudad1">Neuquen</option>
-                    <option value="ciudad2">Plottier</option>
-                </select>
-                <button class="boton" type="submit">Buscar</button>
-
-            </form>
-        </div>
-        <article>
-            <h2>Canchas disponibles</h2>
-            <section id="resultadosCanchas">
-
-            </section>
-        </article>
+      <div id="buscador">
+        <form action="">
+          <input type="text" placeholder="Buscar..." />
+          <select name="" id="">
+            <option value="">Seleccionar tipo de cancha</option>
+            <option value="F5">Futbol 5</option>
+            <option value="F8">Futbol 8</option>
+            <option value="F11">Futbol 11</option>
+          </select>
+          <select>
+            <option value="">Seleccionar horario</option>
+            <option value="9:00">9:00 PM</option>
+            <option value="10:00">10:00 PM</option>
+            <option value="11:00">11:00 PM</option>
+          </select>
+          <select name="" id="">
+            <option value="">Seleccionar ciudad</option>
+            <option value="ciudad1">Neuquen</option>
+            <option value="ciudad2">Plottier</option>
+          </select>
+          <button class="boton" type="submit">Buscar</button>
+        </form>
+      </div>
+      <article>
+        <h2>Canchas disponibles</h2>
+        <section id="resultadosCanchas"></section>
+      </article>
     </main>
     <footer>
-        <p>&copy; 2025 CanchasDelSur. All rights reserved.</p>
+      <p>&copy; 2025 CanchasDelSur. All rights reserved.</p>
     </footer>
     <script src="../js/canchasCatalogo.js"></script>
     <script src="../js/auth.js"></script>
     <script>
-        agregarLi();
-        cargarCanchasDisponibles();
+      requiereLogin();
+      cargarCanchasDisponibles();
     </script>
-</body>
-
+  </body>
 </html>
