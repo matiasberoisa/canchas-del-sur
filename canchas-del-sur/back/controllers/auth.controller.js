@@ -1,5 +1,5 @@
 export const logIn = (req, res) => {
-  const { username, password } = req.body;
+  const { username, password } = req.query;
   const user = usuarios.find(
     (u) => u.username === username && u.password === password
   );
