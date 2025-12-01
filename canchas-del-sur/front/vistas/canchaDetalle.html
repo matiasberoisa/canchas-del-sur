@@ -87,6 +87,12 @@
       <p>&copy; 2023 Canchas del Sur</p>
     </footer>
     <script src="../js/canchaDetalle.js"></script>
-    <script src="../js/auth.js"></script>
+    <script type="module">
+      import { login, estaLogueado } from "../js/auth.js";
+
+      if (!estaLogueado()) {
+        login();
+      }
+    </script>
   </body>
 </html>

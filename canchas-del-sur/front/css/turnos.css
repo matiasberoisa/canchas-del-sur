@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-font-family: "Segoe UI", sans-serif;
+    font-family: "Segoe UI", sans-serif;
 }
 
 header {
@@ -72,7 +72,7 @@ footer {
     background: #f9f9f9;
     border-radius: 16px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    
+
     color: #333;
 
     h2 {
@@ -159,37 +159,4 @@ footer {
             background: #175f38;
         }
     }
-}
-.login-container {
-    width: 300px;
-    margin: 40px auto;
-    background: #ffffff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.2);
-    text-align: center;
-}
-
-.login-container input {
-    width: 90%;
-    margin: 10px 0;
-    padding: 10px;
-}
-
-.login-container button {
-    width: 100%;
-    padding: 10px;
-    background: #3b82f6;
-    color: white;
-    border: none;
-    cursor: pointer;
-}
-
-.login-container button:hover {
-    background: #1d4ed8;
-}
-
-.error {
-    color: red;
-    margin-top: 10px;
 }

@@ -76,8 +76,11 @@
       </article>
     </main>
     <script type="module">
-      import { requiereLogin, logout } from "../js/auth.js";
-      requiereLogin();
+      import { login, estaLogueado } from "../js/auth.js";
+
+      if (!estaLogueado()) {
+        login();
+      }
     </script>
     <footer>
       <p>&copy; 2023 Canchas del Sur</p>
