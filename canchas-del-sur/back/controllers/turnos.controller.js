@@ -29,14 +29,3 @@ export const addAll = async (req, res) => {
   await Turno.addAll(nuevosTurnos);
   res.status(201).json(nuevosTurnos);
 };
-export const reservarTurno = async (req, res) => {
-  const { idTurno, idUsuario } = req.body;
-  const turno = Turno.getById(idTurno);
-  if (!turno) {
-    return res.status(404).send("El turno no existe");
-  }
-  let newId = (await Reserva.getLastId()) + 1;
-  const reserva = new Reserva(newId, idTurno, idUsuario);
-  Reserva.add(reserva);
-  res.status(201).json(reserva);
-};
