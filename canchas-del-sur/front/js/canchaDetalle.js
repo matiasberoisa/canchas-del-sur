@@ -101,7 +101,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   const id = urlParams.get("id");
 
   try {
-    const canchaRes = await fetch(`/api/canchas/byId?id=${id}`);
+    const canchaRes = await fetch(`/api/canchas/byId/${id}`);
     const cancha = await canchaRes.json();
 
     renderizarDetalleCancha(cancha, dias);

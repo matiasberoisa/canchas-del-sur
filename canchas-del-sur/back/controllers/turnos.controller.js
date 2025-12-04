@@ -33,8 +33,8 @@ export const addAll = async (req, res) => {
   res.status(201).json(nuevosTurnos);
 };
 export const getDiasDisponiblesByCancha = async (req, res) => {
-  const { canchaId } = req.query;
-  const diasDisponibles = await Turno.getDiasDisponiblesByCancha(parseInt(canchaId));
+  const { idCancha } = req.params;
+  const diasDisponibles = await Turno.getDiasDisponiblesByCancha(parseInt(idCancha));
   res.status(200).json(diasDisponibles);
 }
 export const getHorariosByDias = async (req, res) => {

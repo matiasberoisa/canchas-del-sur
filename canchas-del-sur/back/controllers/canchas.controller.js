@@ -15,7 +15,7 @@ export const obtenerCanchas = async (req, res) => {
   res.status(200).json(canchas);
 };
 export const obtenerCanchaById = async (req, res) => {
-  const { id } = req.query;
+  const { id } = req.params;
   const cancha = await Cancha.getById(parseInt(id));
   const turnosDiasDisponibles = await Turno.getDiasDisponiblesByCancha(
     cancha.id
