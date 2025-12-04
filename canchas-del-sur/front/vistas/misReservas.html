@@ -45,15 +45,15 @@
     </footer>
     <script type="module">
       import { login, estaLogueado } from "../js/auth.js";
+      import { cargarReservasUsuario } from "../js/misReservas.js";
+      
       if (!estaLogueado()) {
         login();
-      }
-    </script>
-    <script type="module">
-      import { cargarReservasUsuario } from "../js/misReservas.js";
-      const userId = localStorage.getItem("userId");
-      if (userId) {
-        cargarReservasUsuario(parseInt(userId));
+      } else {
+        const userId = localStorage.getItem("userId");
+        if (userId) {
+          cargarReservasUsuario(parseInt(userId));
+        }
       }
     </script>
   </body>

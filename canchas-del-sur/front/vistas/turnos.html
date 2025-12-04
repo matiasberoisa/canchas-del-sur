@@ -80,11 +80,15 @@
     </main>
     <script type="module">
       import { login, estaLogueado } from "../js/auth.js";
+      
       if (!estaLogueado()) {
         login();
+      } else {
+        const script = document.createElement('script');
+        script.src = '../js/turnos.js';
+        document.body.appendChild(script);
       }
     </script>
-    <script src="../js/turnos.js"></script>
     <footer>
       <p>&copy; 2023 Canchas del Sur</p>
     </footer>

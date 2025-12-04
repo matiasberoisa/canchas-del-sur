@@ -31,14 +31,14 @@ export function login() {
     .login-container button {
         width: 100%;
         padding: 10px;
-        background: #3b82f6;
+         background: rgb(2, 133, 65);
         color: white;
         border: none;
         cursor: pointer;
     }
 
     .login-container button:hover {
-        background: #1d4ed8;
+        background: #165d37;
     }
 
     .error {
