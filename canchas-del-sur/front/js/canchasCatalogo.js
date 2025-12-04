@@ -5,7 +5,6 @@ export function cargarCanchasDisponibles() {
   
   cargarTiposCanchas(tipoFiltro);
   
-  // Restaurar valor del input de búsqueda
   const inputBuscar = document.getElementById("inputBuscar");
   if (inputBuscar && searchFiltro) {
     inputBuscar.value = searchFiltro;

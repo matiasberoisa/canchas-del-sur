@@ -1,4 +1,3 @@
-// Cargar tipos de canchas
 async function cargarCanchas() {
   try {
     const response = await fetch("/api/canchas");
@@ -19,7 +18,6 @@ async function cargarCanchas() {
   }
 }
 
-// Crear turnos
 async function crearTurnos(event) {
   event.preventDefault();
 
@@ -29,7 +27,6 @@ async function crearTurnos(event) {
   const horarioDesde = document.getElementById("horaInicioTurno").value;
   const horarioHasta = document.getElementById("horaFinTurno").value;
 
-  // Obtener días seleccionados
   const dias = [];
   const diasMap = {
     domingo: 0,
@@ -84,7 +81,6 @@ async function crearTurnos(event) {
   }
 }
 
-// Inicializar
 document.addEventListener("DOMContentLoaded", () => {
   cargarCanchas();
 

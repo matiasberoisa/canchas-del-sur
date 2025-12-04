@@ -24,7 +24,6 @@ function mostrarTiposCanchas(canchas) {
     sec.id = "canchaTipo";
     sec.style.cursor = "pointer";
     console.log(t);
-    // Redirigir a canchasCatalogo con el tipo de cancha
     sec.addEventListener("click", () => {
       window.location.href = `vistas/canchasCatalogo.html?tipo=${encodeURIComponent(
         t.nombre

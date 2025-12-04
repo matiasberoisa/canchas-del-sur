@@ -32,19 +32,16 @@ window.onload = function () {
         fillOpacity: 0.2,
       }).addTo(map);
 
-      // Event listener para el control de radio
       const area = document.getElementById("kmRadio");
       const areaValue = document.getElementById("areaValue");
       const busqueda = this.document.getElementById("btnBuscarCanchasMapa");
       areaValue.textContent = area.value;
       area.addEventListener("input", () => {
         areaValue.textContent = area.value;
-        currentRadius = area.value * 100; // Convertir km a metros
-
+        currentRadius = area.value * 100;
         if (currentCircle) {
           map.removeLayer(currentCircle);
         }
-
 
         currentCircle = L.circle([lat, lon], {
           radius: currentRadius,
@@ -56,27 +53,34 @@ window.onload = function () {
 
       busqueda.addEventListener("click", async () => {
         try {
-          // Limpiar marcadores anteriores
           partidosMarkers.forEach((marker) => map.removeLayer(marker));
           partidosMarkers = [];
-          console.log("Buscando partidos cerca de:", lat, lon, "con radio:", currentRadius);
+          console.log(
+            "Buscando partidos cerca de:",
+            lat,
+            lon,
+            "con radio:",
+            currentRadius
+          );
           const distanciaKm = currentRadius / 1000;
-          const response = await fetch(`/api/turnos/partidosCerca?long=${lon}&lat=${lat}&distancia=${distanciaKm}`);
-          
+          const response = await fetch(
+            `/api/turnos/partidosCerca?long=${lon}&lat=${lat}&distancia=${distanciaKm}`
+          );
+
           if (!response.ok) {
-            throw new Error('Error al obtener partidos');
+            throw new Error("Error al obtener partidos");
           }
-          
+
           const partidos = await response.json();
           console.log("Partidos recibidos:", partidos);
-          
+
           if (!partidos || partidos.length === 0) {
             alert("No se encontraron partidos en el área seleccionada");
             return;
           }
-          
+
           partidos.forEach((p) => {
-              const popupContent = `
+            const popupContent = `
                 <div style="
                   width: 220px;
                   padding: 10px;
@@ -100,11 +104,11 @@ window.onload = function () {
                 </div>
               `;
 
-              const marker = L.marker([p.cancha.lat, p.cancha.lng])
-                .addTo(map)
-                .bindPopup(popupContent, { maxWidth: 240 });
+            const marker = L.marker([p.cancha.lat, p.cancha.lng])
+              .addTo(map)
+              .bindPopup(popupContent, { maxWidth: 240 });
 
-              partidosMarkers.push(marker); // Guardar referencia al marcador
+            partidosMarkers.push(marker); // Guardar referencia al marcador
           });
         } catch (error) {
           console.log(error);
