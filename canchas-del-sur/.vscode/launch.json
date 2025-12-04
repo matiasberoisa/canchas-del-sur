@@ -1,0 +1,15 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch Server (Nodemon)",
+      "skipFiles": ["<node_internals>/**"],
+      "runtimeExecutable": "nodemon",
+      "program": "${workspaceFolder}/back/server.js",
+      "cwd": "${workspaceFolder}/back",
+      "restart": true
+    }
+  ]
+}
