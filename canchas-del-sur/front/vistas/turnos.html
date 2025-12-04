@@ -34,6 +34,12 @@
         </ul>
       </nav>
     </header>
+    <script type="module">
+      import { initializeHeader } from "../js/header.js";
+      document.addEventListener("DOMContentLoaded", () => {
+        initializeHeader();
+      });
+    </script>
     <main>
       <article id="turnos">
         <h2>Gestion de Turnos</h2>

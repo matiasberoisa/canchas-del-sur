@@ -33,6 +33,12 @@
         </ul>
       </nav>
     </header>
+    <script type="module">
+      import { initializeHeader } from "../js/header.js";
+      document.addEventListener("DOMContentLoaded", () => {
+        initializeHeader();
+      });
+    </script>
     <main>
             <script type="module">
       import { login, estaLogueado } from "../js/auth.js";
