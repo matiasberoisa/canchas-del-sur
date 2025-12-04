@@ -16,38 +16,38 @@ const archivoReservas = path.join(__dirname, "./data/reservas.json");
 const archivoTurnos = path.join(__dirname, "./data/turnos.json");
 const turnos = require("./data/turnos.json");
 
-const Turno = require("./tipos/Turno.js");
-const Reserva = require("./tipos/Reserva.js");
+const Turno = require("./models/turno.models.js");
+const Reserva = require("./models/reserva.model.js");
 
 
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "../front")));
 app.use("/vistas", express.static(path.join(__dirname, "../front/vistas")));
 
-app.get("/api/canchas", (req, res) => {
-  res.json(canchas);
-});
+// app.get("/api/canchas", (req, res) => {
+//   res.json(canchas);
+// });
 
-app.get("/api/canchasInicio", (req, res) => {
-  res.json(canchasInicio);
-});
+// app.get("/api/canchasInicio", (req, res) => {
+//   res.json(canchasInicio);
+// });
 
-app.post("/api/canchasBusqueda", (req, res) => {
-  const data = req.body;
-  console.log("Datos recibidos en el servidor:", data);
-  res.json(partidos);
-});
+// app.post("/api/canchasBusqueda", (req, res) => {
+//   const data = req.body;
+//   console.log("Datos recibidos en el servidor:", data);
+//   res.json(partidos);
+// });
 
 //Login
-app.post("/api/login"  , (req, res) => {
-const { username, password } = req.body;
-const user = usuarios.find(u => u.username === username && u.password === password);
-if(user &&user.id){
-  res.status(200).json({ success: true, message: "Login exitoso", userId: user.id });
-}else{
-  res.status(401).json({ success: false, message: "Credenciales inválidas" });
-}
-});
+// app.post("/api/login"  , (req, res) => {
+// const { username, password } = req.body;
+// const user = usuarios.find(u => u.username === username && u.password === password);
+// if(user &&user.id){
+//   res.status(200).json({ success: true, message: "Login exitoso", userId: user.id });
+// }else{
+//   res.status(401).json({ success: false, message: "Credenciales inválidas" });
+// }
+// });
 
 app.post("/turnos/reservar", (req, res) => {
   const { idTurno, idUsuario } = req.body;
@@ -67,39 +67,7 @@ app.post("/turnos/reservar", (req, res) => {
 app.get("/turnos", (req, res) => {
   res.status(200).json(turnos);
 });
-app.post("/turnos", (req, res) => {
-  const dataTurnos = req.body;
-  let nuevosTurnos = [];
-  const diaInicio = new Date(dataTurnos.fechaDesde);
-  const diaHasta = new Date(dataTurnos.fechaHasta);
 
-  const { dias, horarioDesde, horarioHasta, idCancha } = dataTurnos;
-
-  let comienzo = new Date(diaInicio);
-  let newId = turnos[turnos.length - 1]?.id + 1 || 1;
-  while (comienzo <= diaHasta) {
-    const diaSemana = comienzo.getDay();
-    if (dias.includes(diaSemana)) {
-      let nuevoTurno = new Turno(
-        newId,
-        idCancha,
-        comienzo,
-        horarioDesde,
-        horarioHasta
-      );
-      nuevosTurnos.push(nuevoTurno);
-      newId++;
-    }
-    comienzo.setDate(comienzo.getDate() + 1);
-  }
-
-  fs.writeFileSync(
-    archivoTurnos,
-    JSON.stringify(nuevosTurnos, null, 2),
-    "utf8"
-  );
-  res.status(201).json(nuevosTurnos);
-});
 
 
 app.get("/", (req, res) => {
