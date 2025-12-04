@@ -1,8 +1,7 @@
-function cargarYMostrarCanchas() {
-  fetch("/api/canchasInicio")
+export function cargarYmostrarCanchas() {
+  fetch("/api/canchas/tipos")
     .then((response) => response.json())
     .then((data) => {
-
       mostrarTiposCanchas(data);
     })
     .catch((error) => {
@@ -15,21 +14,22 @@ function mostrarTiposCanchas(canchas) {
   cont.innerHTML = "";
   canchas.forEach((t) => {
     const sec = document.createElement("section");
-   const img = document.createElement("img");
-   const p = document.createElement("p");
-   
-   p.textContent = t.nombre;
-   img.src = t.img;
-   img.alt = t.nombre;
-   img.dataset.original = t.img;
-   sec.id = "canchaTipo";
-   
-       sec.addEventListener("mouseenter", () => {
-      img.src = t.gift;
+    const img = document.createElement("img");
+    const p = document.createElement("p");
+
+    p.textContent = t.nombre;
+    img.src = `/api/canchas/download?nombreImg=${t.img}`;
+    img.alt = t.nombre;
+    img.dataset.original = t.imagen;
+    sec.id = "canchaTipo";
+    sec.style.cursor = "pointer";
+    console.log(t);
+    sec.addEventListener("click", () => {
+      window.location.href = `vistas/canchasCatalogo.html?tipo=${encodeURIComponent(
+        t.nombre
+      )}`;
     });
-    sec.addEventListener("mouseleave", () => {
-      img.src = t.img;
-    });
+
     sec.appendChild(p);
     sec.appendChild(img);
     cont.appendChild(sec);

@@ -1,10 +1,46 @@
+async function crearReserva(idTurno) {
+  const idUsuario = localStorage.getItem("userId");
+
+  try {
+    const response = await fetch("/api/reservas", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        idTurno: idTurno,
+        idUsuario: parseInt(idUsuario),
+      }),
+    });
+
+    if (response.ok) {
+      alert("Turno reservado con exito");
+      window.location.reload();
+    } else {
+      alert("Error al reservar turno");
+    }
+  } catch (error) {
+    alert("Error al reservar turno");
+  }
+}
+
 function mostrarHorariosCancha(dia) {
+  console.log(dia);
   const horarios = document.getElementById("horarios");
   horarios.innerHTML = "";
-  dia.horarios.forEach((h) => {
-    const p = document.createElement("p");
-    p.textContent = h;
-    horarios.appendChild(p);
+  dia.horarios.forEach(({ id, horarioDesde, horarioHasta }) => {
+    const button = document.createElement("button");
+    button.textContent = `Reservar: ${horarioDesde} - ${horarioHasta}`;
+    button.className = "btn";
+    button.addEventListener("click", () => {
+      const confirmar = confirm(
+        `¿Reservar este turno  ${horarioDesde} - ${horarioHasta}?`
+      );
+      if (confirmar) {
+        crearReserva(id);
+      }
+    });
+    horarios.appendChild(button);
   });
 }
 function obtenerParametroURL(nombre) {
@@ -13,10 +49,27 @@ function obtenerParametroURL(nombre) {
 }
 
 function renderizarDetalleCancha(cancha) {
-  document.getElementById("imagenCancha").src = cancha.imagen;
+  document.getElementById(
+    "imagenCancha"
+  ).src = `/api/canchas/download?nombreImg=${cancha.imagen}`;
   document.querySelector("#cancha h2").textContent = cancha.tipo;
   document.querySelector("#ubicacion span").textContent = cancha.ubicacion;
   document.querySelector("#descripcion p").textContent = cancha.descripcion;
+
+  // Inicializar mapa de Leaflet
+  if (cancha.lat && cancha.lng) {
+    const mapDetalle = L.map("mapDetalle").setView([cancha.lat, cancha.lng], 15);
+
+    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      maxZoom: 19,
+      attribution: '&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a>',
+    }).addTo(mapDetalle);
+
+    L.marker([cancha.lat, cancha.lng])
+      .addTo(mapDetalle)
+      .bindPopup(cancha.nombre)
+      .openPopup();
+  }
 
   const listadoServicios = document.getElementById("listadoServicios");
   cancha.servicios.forEach((servicio) => {
@@ -25,11 +78,11 @@ function renderizarDetalleCancha(cancha) {
     listadoServicios.appendChild(li);
   });
   const listadoDias = document.getElementById("dias");
-  console.log(cancha.diasDisponibles);
+
   cancha.diasDisponibles.forEach((dia) => {
     const li = document.createElement("li");
     const button = document.createElement("button");
-    button.className = "btnDias";
+    button.className = "btn";
     button.addEventListener("click", () => {
       mostrarHorariosCancha(dia);
     });
@@ -39,16 +92,16 @@ function renderizarDetalleCancha(cancha) {
   });
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  const id = obtenerParametroURL("id");
-  fetch("/api/canchas")
-    .then((res) => res.json())
-    .then((canchas) => {
-      const cancha = canchas.find((c) => c.id == id);
+document.addEventListener("DOMContentLoaded", async () => {
+  const urlParams = new URLSearchParams(window.location.search);
+  const id = urlParams.get("id");
 
-      renderizarDetalleCancha(cancha);
-    })
-    .catch(() => {
-      console.log("Error al cargar los datos de la cancha");
-    });
+  try {
+    const canchaRes = await fetch(`/api/canchas/byId?id=${id}`);
+    const cancha = await canchaRes.json();
+
+    renderizarDetalleCancha(cancha, dias);
+  } catch (error) {
+    console.log("Error al cargar los datos de la cancha", error);
+  }
 });

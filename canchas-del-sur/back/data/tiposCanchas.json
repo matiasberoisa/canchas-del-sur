@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "nombre": "FUTBOL 11",
+    "img": "futbol11.png"
+  },
+  {
+    "id": 2,
+    "nombre": "TENIS",
+    "img": "tenis.jfif"
+  },
+  {
+    "id": 3,
+    "nombre": "BASQUET",
+    "img": "basquet.png"
+  }
+]
+
