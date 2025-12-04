@@ -1,9 +1,9 @@
-export const logIn = (req, res) => {
+import { Usuario } from "../models/usuario.model.js";
+
+export const logIn = async (req, res) => {
   const { username, password } = req.query;
-  const user = usuarios.find(
-    (u) => u.username === username && u.password === password
-  );
-  if (user && user.id) {
+  const user = await Usuario.getByUser(username);
+  if (user && user.password === password) {
     res
       .status(200)
       .json({ success: true, message: "Login exitoso", userId: user.id });

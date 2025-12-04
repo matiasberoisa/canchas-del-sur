@@ -1,8 +1,8 @@
 function cargarYMostrarCanchas() {
-  fetch("/api/canchasInicio")
+  fetch("/api/canchas")
     .then((response) => response.json())
     .then((data) => {
-
+console.log(data);
       mostrarTiposCanchas(data);
     })
     .catch((error) => {

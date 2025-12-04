@@ -1,4 +1,4 @@
-const PATH = "./back/data/turnos.json";
+const PATH = "./data/turnos.json";
 export class Turno {
   constructor(id, canchaId, fecha, horarioDesde, horarioHasta) {
     this.id = id;

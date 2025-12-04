@@ -1,4 +1,4 @@
-const PATH = "./back/data/reservas.json";
+const PATH = "./data/reservas.json";
 export class Reserva {
   constructor(id, turnoId, usuarioId) {
     this.id = id;

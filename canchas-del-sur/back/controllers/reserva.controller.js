@@ -1,5 +1,5 @@
-import { Reserva } from "../models/reserva.model";
-import { Turno } from "../models/turno.models";
+import { Reserva } from "../models/reserva.model.js";
+import { Turno } from "../models/turno.models.js";
 
 export const add = async (req, res) => {
   const { idTurno, idUsuario } = req.body;

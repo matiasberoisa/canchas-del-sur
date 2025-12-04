@@ -1,5 +1,5 @@
-import { read } from "../utils/readFiles";
-const PATH = "./back/data/canchas.json";
+import { read } from "../utils/readFiles.js";
+const PATH = "./data/canchas.json";
 export class Cancha {
   constructor(id, nombre, tipo, ubicacion, imagen, descripcion, servicios) {
     this.id = id;
