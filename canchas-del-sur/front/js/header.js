@@ -5,7 +5,6 @@ export function initializeHeader() {
   
   if (!nav) return;
   
-  // Crear elemento de perfil
   const perfilLi = document.createElement('li');
   perfilLi.className = 'perfil-menu';
   perfilLi.style.position = 'relative';
@@ -41,7 +40,6 @@ export function initializeHeader() {
   
   nav.appendChild(perfilLi);
   
-  // Agregar estilos
   const style = document.createElement('style');
   style.innerHTML = `
     .perfil-menu {
@@ -87,7 +85,6 @@ export function initializeHeader() {
   `;
   document.head.appendChild(style);
   
-  // Toggle dropdown
   const toggle = perfilLi.querySelector('.perfil-toggle');
   const dropdown = perfilLi.querySelector('.perfil-dropdown');
   
@@ -96,14 +93,12 @@ export function initializeHeader() {
     dropdown.style.display = dropdown.style.display === 'none' ? 'block' : 'none';
   });
   
-  // Cerrar dropdown al hacer click fuera
   document.addEventListener('click', (e) => {
     if (!perfilLi.contains(e.target)) {
       dropdown.style.display = 'none';
     }
   });
   
-  // Event listeners
   const btnLogout = document.getElementById('btn-logout');
   if (btnLogout) {
     btnLogout.addEventListener('click', (e) => {
@@ -116,7 +111,6 @@ export function initializeHeader() {
   if (btnLogin) {
     btnLogin.addEventListener('click', (e) => {
       e.preventDefault();
-      // Importar dinámicamente para evitar dependencias circulares
       import('./auth.js').then(({ login }) => {
         login();
       });

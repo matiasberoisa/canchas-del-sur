@@ -99,7 +99,7 @@ export class Turno {
               lat: cancha.lat,
               lng: cancha.lng,
             },
-            distancia: d, // opcional, útil si querés ordenarlos
+            distancia: d, 
           };
         }
 

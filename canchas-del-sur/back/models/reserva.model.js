@@ -48,6 +48,7 @@ export class Reserva {
     reservas.push(reserva);
     await write(PATH, reservas);
   }
+
   static async cancelarReserva(id) {
     let reservas = await this.getAll();
     const reservaIndex = reservas.findIndex((reserva) => reserva.id === id);

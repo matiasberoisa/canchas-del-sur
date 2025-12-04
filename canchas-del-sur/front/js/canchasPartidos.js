@@ -63,14 +63,11 @@ window.onload = function () {
           const response = await fetch(
             `/api/turnos/partidosCerca?long=${lon}&lat=${lat}&distancia=${distanciaKm}`
           );
-          console.log("Respuesta recibida:", response);
           if (!response.ok) {
             throw new Error("Error al obtener partidos");
           }
 
           const partidos = await response.json();
-          console.log("Partidos recibidos:", partidos);
-
           if (!partidos || partidos.length === 0) {
             alert("No se encontraron partidos en el área seleccionada");
             return;
