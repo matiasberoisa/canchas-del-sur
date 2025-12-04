@@ -1,5 +1,10 @@
 import { Cancha } from "../models/cancha.model.js";
 import path from "path";
+import { fileURLToPath } from "url";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 export const obtenerCanchas = async (req, res) => {
   const canchas = await Cancha.getAll();
   res.status(200).json(canchas);
