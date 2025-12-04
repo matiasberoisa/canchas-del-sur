@@ -32,25 +32,12 @@
     </header>
     <main>
       <div id="buscador">
-        <form action="">
-          <input type="text" placeholder="Buscar..." />
-          <select name="" id="">
+        <form id="formBuscar">
+          <input type="text" placeholder="Buscar..." id="inputBuscar" />
+          <select name="tipo" id="selectTipo">
             <option value="">Seleccionar tipo de cancha</option>
-            <option value="F5">Futbol 5</option>
-            <option value="F8">Futbol 8</option>
-            <option value="F11">Futbol 11</option>
           </select>
-          <select>
-            <option value="">Seleccionar horario</option>
-            <option value="9:00">9:00 PM</option>
-            <option value="10:00">10:00 PM</option>
-            <option value="11:00">11:00 PM</option>
-          </select>
-          <select name="" id="">
-            <option value="">Seleccionar ciudad</option>
-            <option value="ciudad1">Neuquen</option>
-            <option value="ciudad2">Plottier</option>
-          </select>
+
           <button class="boton" type="submit">Buscar</button>
         </form>
       </div>
@@ -62,16 +49,9 @@
     <footer>
       <p>&copy; 2025 CanchasDelSur. All rights reserved.</p>
     </footer>
-       <script type="module">
-      import { login, estaLogueado } from "../js/auth.js";
-
-      if (!estaLogueado()) {
-        login();
-      }
-    </script>
-    <!-- <script>
-      login();
+    <script type="module">
+      import { cargarCanchasDisponibles } from "../js/canchasCatalogo.js";
       cargarCanchasDisponibles();
-    </script> -->
+    </script>
   </body>
 </html>

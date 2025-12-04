@@ -2,42 +2,69 @@
   {
     "id": 1,
     "nombre": "Cancha Sicolo 1",
-    "tipo": "Futbol 11",
+    "tipo": "FUTBOL 11",
     "ubicacion": "Neuquén, Complejo Sicolo",
     "imagen": "futbol11.png",
     "descripcion": "Cancha de césped sintético, iluminación, parrillas y duchas.",
     "servicios": [
-      { "nombre": "Parrilla", "icon": "<i class=\"fa-solid fa-utensils\"></i>" },
-      { "nombre": "Vestuarios", "icon": "<i class=\"fa-solid fa-user-alt\"></i>" },
-      { "nombre": "Estacionamiento", "icon": "<i class=\"fa-solid fa-car-side\"></i>" },
-      { "nombre": "Iluminación", "icon": "<i class=\"fa-solid fa-lightbulb\"></i>" }
+      {
+        "nombre": "Parrilla",
+        "icon": "<i class=\"fa-solid fa-utensils\"></i>"
+      },
+      {
+        "nombre": "Vestuarios",
+        "icon": "<i class=\"fa-solid fa-user-alt\"></i>"
+      },
+      {
+        "nombre": "Estacionamiento",
+        "icon": "<i class=\"fa-solid fa-car-side\"></i>"
+      },
+      {
+        "nombre": "Iluminación",
+        "icon": "<i class=\"fa-solid fa-lightbulb\"></i>"
+      }
     ]
   },
   {
     "id": 2,
     "nombre": "Cancha Deportivo 1",
-    "tipo": "Tenis",
+    "tipo": "TENIS",
     "ubicacion": "Plottier, Club Deportivo",
-    "imagen": "tenis .jfif",
+    "imagen": "tenis.jfif",
     "descripcion": "Cancha de Tenis polvo ladrillo y tribunas.",
     "servicios": [
-      { "nombre": "Buffet", "icon": "<i class=\"fa-solid fa-drumstick-bite\"></i>" },
-      { "nombre": "Estacionamiento", "icon": "<i class=\"fa-solid fa-car-side\"></i>" },
+      {
+        "nombre": "Buffet",
+        "icon": "<i class=\"fa-solid fa-drumstick-bite\"></i>"
+      },
+      {
+        "nombre": "Estacionamiento",
+        "icon": "<i class=\"fa-solid fa-car-side\"></i>"
+      },
       { "nombre": "Tribunas", "icon": "<i class=\"fa-solid fa-chair\"></i>" }
     ]
   },
   {
     "id": 3,
     "nombre": "Estadio Central",
-    "tipo": "Basquet",
+    "tipo": "BASQUET",
     "ubicacion": "Neuquén, Estadio Central",
     "imagen": "basquet.png",
     "descripcion": "Cancha de Basquet con piso de madera, vestuarios y buffet.",
     "servicios": [
-      { "nombre": "Vestuarios", "icon": "<i class=\"fa-solid fa-user-alt\"></i>" },
+      {
+        "nombre": "Vestuarios",
+        "icon": "<i class=\"fa-solid fa-user-alt\"></i>"
+      },
       { "nombre": "Tribunas", "icon": "<i class=\"fa-solid fa-chair\"></i>" },
-      { "nombre": "Estacionamiento", "icon": "<i class=\"fa-solid fa-car-side\"></i>" },
-      { "nombre": "Buffet", "icon": "<i class=\"fa-solid fa-drumstick-bite\"></i>" }
+      {
+        "nombre": "Estacionamiento",
+        "icon": "<i class=\"fa-solid fa-car-side\"></i>"
+      },
+      {
+        "nombre": "Buffet",
+        "icon": "<i class=\"fa-solid fa-drumstick-bite\"></i>"
+      }
     ]
   }
 ]

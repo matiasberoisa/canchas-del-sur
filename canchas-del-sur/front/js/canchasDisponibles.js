@@ -1,5 +1,5 @@
-function cargarYMostrarCanchas() {
-  fetch("/api/canchas")
+export function cargarYmostrarCanchas() {
+  fetch("/api/canchas/tipos")
     .then((response) => response.json())
     .then((data) => {
       console.log(data);
@@ -19,10 +19,18 @@ function mostrarTiposCanchas(canchas) {
     const p = document.createElement("p");
 
     p.textContent = t.nombre;
-    img.src = `/api/canchas/download?nombreImg=${t.imagen}`;
+    img.src = `/api/canchas/download?nombreImg=${t.img}`;
     img.alt = t.nombre;
     img.dataset.original = t.imagen;
     sec.id = "canchaTipo";
+    sec.style.cursor = "pointer";
+    console.log(t);
+    // Redirigir a canchasCatalogo con el tipo de cancha
+    sec.addEventListener("click", () => {
+      window.location.href = `vistas/canchasCatalogo.html?tipo=${encodeURIComponent(
+        t.nombre
+      )}`;
+    });
 
     sec.appendChild(p);
     sec.appendChild(img);

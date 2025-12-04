@@ -1,3 +1,5 @@
+import { read } from "../utils/readFiles.js";
+
 const PATH = "./data/usuarios.json";
 export class Usuario {
   constructor(id, username, password) {

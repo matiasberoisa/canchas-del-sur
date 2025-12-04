@@ -1,3 +1,5 @@
+import { read } from "../utils/readFiles.js";
+
 const PATH = "./data/turnos.json";
 export class Turno {
   constructor(id, canchaId, fecha, horarioDesde, horarioHasta) {
@@ -24,5 +26,5 @@ export class Turno {
     const turnos = await this.getAll();
     return turnos.find((turno) => turno.id === id);
   }
-  
+  static async getByCanchaId(canchaId) {}
 }

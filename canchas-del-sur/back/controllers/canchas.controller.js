@@ -4,9 +4,13 @@ import { fileURLToPath } from "url";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-
-export const obtenerCanchas = async (req, res) => {
-  const canchas = await Cancha.getAll();
+export const obtenerTiposCanchas = async (req, res) => {
+  const tipos = await Cancha.getAllTipos();
+  res.status(200).json(tipos);
+};
+export const obtenerCanchas = async (req, res) => {   
+  const { tipo, search, page, limit } = req.query;
+  const canchas = await Cancha.getAll(tipo,search, page, limit);
   res.status(200).json(canchas);
 };
 export const dowloadImg = (req, res) => {
