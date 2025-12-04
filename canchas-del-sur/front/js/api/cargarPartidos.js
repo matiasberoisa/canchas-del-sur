@@ -1,8 +1,7 @@
 export const cargarPartidos = async (data) => {
   try {
-    const response = await fetch(`/api/canchasBusqueda`, {
-      method: "POST",
-      body: JSON.stringify(data),
+    const response = await fetch(`/api/turnos/partidosCerca?lon=${data.lon}&lat=${data.lat}&distancia=${data.distancia}`, {
+      method: "GET",
       headers: {
         "Content-Type": "application/json",
       },

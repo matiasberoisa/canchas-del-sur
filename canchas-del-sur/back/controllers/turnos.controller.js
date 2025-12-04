@@ -42,3 +42,9 @@ export const getHorariosByDias = async (req, res) => {
   const horariosDisponibles = await Turno.getHorariosByDias(parseInt(canchaId), fecha);
   res.status(200).json(horariosDisponibles);
 }
+export const traerPartidosCerca= async (req, res) => {
+
+  const { lat, long, distancia } = req.query;
+  const partidosCercanos = await Turno.traerPartidosCerca(parseFloat(lat), parseFloat(long), parseFloat(distancia));
+  res.status(200).json(partidosCercanos);
+}

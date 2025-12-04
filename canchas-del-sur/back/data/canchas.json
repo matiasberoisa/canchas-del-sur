@@ -4,8 +4,8 @@
     "nombre": "Cancha Sicolo 1",
     "tipo": "FUTBOL 11",
     "ubicacion": "Neuquén, Complejo Sicolo",
-    "lat": -38.9565375,
-    "lng": -67.9172679,
+    "lat": -38.949597, 
+    "lng": -68.076888,
     "imagen": "futbol11.png",
     "descripcion": "Cancha de césped sintético, iluminación, parrillas y duchas.",
     "servicios": [

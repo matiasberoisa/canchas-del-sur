@@ -59,14 +59,15 @@ window.onload = function () {
           // Limpiar marcadores anteriores
           partidosMarkers.forEach((marker) => map.removeLayer(marker));
           partidosMarkers = [];
+          console.log("Buscando partidos cerca de:", lat, lon, "con radio:", currentRadius);
+          const distanciaKm = currentRadius / 1000;
+          const response = await fetch(`/api/turnos/partidosCerca?long=${lon}&lat=${lat}&distancia=${distanciaKm}`);
           
-          const data = {
-            lat: lat,
-            lon: lon,
-            radius: currentRadius
-          };
+          if (!response.ok) {
+            throw new Error('Error al obtener partidos');
+          }
           
-          const partidos = await cargarPartidos(data);
+          const partidos = await response.json();
           console.log("Partidos recibidos:", partidos);
           
           if (!partidos || partidos.length === 0) {
@@ -75,8 +76,6 @@ window.onload = function () {
           }
           
           partidos.forEach((p) => {
-            const distancia = map.distance([lat, lon], [p.lat, p.lon]);
-            if (distancia <= currentRadius) {
               const popupContent = `
                 <div style="
                   width: 220px;
@@ -86,10 +85,9 @@ window.onload = function () {
                   box-shadow: 0 2px 6px rgba(0,0,0,0.3);
                   font-family: sans-serif;
                 ">
-                  <h3 style="margin: 0; font-size: 16px; color: #2a7ae2;">${p.nombre}</h3>
-                  <p style="margin: 5px 0;"><strong>Cancha:</strong> ${p.cancha}</p>
-                  <p style="margin: 5px 0;"><strong>Integrantes:</strong> ${p.integrantes}/10</p>
-                  <p style="margin: 5px 0;"><strong>Horario:</strong> ${p.horario}</p>
+                  <h3 style="margin: 0; font-size: 16px; color: #2a7ae2;">${p.cancha.nombre}</h3>
+                  <p style="margin: 5px 0;"><strong>Cancha:</strong> ${p.cancha.nombre}</p>
+                  <p style="margin: 5px 0;"><strong>Horario:</strong> ${p.horarioDesde} - ${p.horarioHasta}</p>
                   <button style="
                     background: #2a7ae2;
                     color: white;
@@ -102,15 +100,15 @@ window.onload = function () {
                 </div>
               `;
 
-              const marker = L.marker([p.lat, p.lon])
+              const marker = L.marker([p.cancha.lat, p.cancha.lng])
                 .addTo(map)
                 .bindPopup(popupContent, { maxWidth: 240 });
 
               partidosMarkers.push(marker); // Guardar referencia al marcador
-            }
           });
         } catch (error) {
-          console.error("Error al cargar las canchas:", error);
+          console.log(error);
+          console.error("Error al cargar los partidos:", error);
           alert("Error al buscar partidos. Por favor intenta nuevamente.");
         }
       });

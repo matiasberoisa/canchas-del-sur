@@ -56,9 +56,19 @@ function renderizarDetalleCancha(cancha) {
   document.querySelector("#ubicacion span").textContent = cancha.ubicacion;
   document.querySelector("#descripcion p").textContent = cancha.descripcion;
 
+  // Inicializar mapa de Leaflet
   if (cancha.lat && cancha.lng) {
-    const iframe = document.querySelector("#ubicacion iframe");
-    iframe.src = `https://www.google.com/maps/embed/v1/place?key=&q=${cancha.lat},${cancha.lng}&zoom=15`;
+    const mapDetalle = L.map("mapDetalle").setView([cancha.lat, cancha.lng], 15);
+
+    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      maxZoom: 19,
+      attribution: '&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a>',
+    }).addTo(mapDetalle);
+
+    L.marker([cancha.lat, cancha.lng])
+      .addTo(mapDetalle)
+      .bindPopup(cancha.nombre)
+      .openPopup();
   }
 
   const listadoServicios = document.getElementById("listadoServicios");
