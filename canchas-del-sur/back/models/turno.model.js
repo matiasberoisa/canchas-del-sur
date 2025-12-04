@@ -108,4 +108,13 @@ export class Turno {
 
     return partidosCercanos;
   }
+  static async liberarTurno(id) {
+    const turnos = await this.getAll();
+    const turno = turnos.findIndex((t) => t.id === id);
+    if (turno !== -1) {
+      turnos[turno].reservaId = null;
+      await write(PATH, turnos);
+    }
+    return turno;
+  }
 }

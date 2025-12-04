@@ -21,7 +21,7 @@ export function cargarCanchasDisponibles() {
       mostrarCanchas(data.data);
     })
     .catch((error) => {
-      console.error("Error al cargar las canchas:", error);
+      alert("Error al cargar las canchas:", error);
     });
 }
 

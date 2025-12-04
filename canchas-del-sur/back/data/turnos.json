@@ -85,7 +85,7 @@
     "fecha": "2025-12-11T00:00:00.000Z",
     "horarioDesde": "20:00",
     "horarioHasta": "22:00",
-    "reservaId": null
+    "reservaId": 2
   },
   {
     "id": 38,
@@ -93,7 +93,7 @@
     "fecha": "2025-12-13T00:00:00.000Z",
     "horarioDesde": "20:00",
     "horarioHasta": "22:00",
-    "reservaId": null
+    "reservaId": 1
   },
   {
     "id": 39,

@@ -25,11 +25,9 @@
       <h1 id="tituloHeader"><a href="../index.html">Canchas Del Sur</a></h1>
       <nav>
         <ul>
-          <li><a href="../index.html#nosotrosInfo">Sobre Nosotros</a></li>
-          <li><a href="../index.html#faq">FAQ</a></li>
-          <li><a href="../index.html#contacto">Contacto</a></li>
           <li><a href="canchasPartidos.html">Unirme</a></li>
           <li><a href="turnos.html">Turnos</a></li>
+          <li><a href="misReservas.html">Mis Reservas</a></li>
         </ul>
       </nav>
     </header>
@@ -40,13 +38,13 @@
       });
     </script>
     <main>
-            <script type="module">
-      import { login, estaLogueado } from "../js/auth.js";
+      <script type="module">
+        import { login, estaLogueado } from "../js/auth.js";
 
-      if (!estaLogueado()) {
-        login();
-      }
-    </script>
+        if (!estaLogueado()) {
+          login();
+        }
+      </script>
       <div id="mapaContainer">
         <div id="map"></div>
         <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>

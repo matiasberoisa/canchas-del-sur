@@ -1,16 +1,7 @@
 [
   {
     "id": 1,
-    "usuarioId": 1
-  },
-  {
-    "id": 2,
-    "turnoId": 27,
-    "usuarioId": 1
-  },
-  {
-    "id": 3,
-    "turnoId": 36,
-    "usuarioId": 1
+    "turnoId": 38,
+    "idUsuario": 1
   }
 ]

@@ -14,7 +14,7 @@ async function crearReserva(idTurno) {
     });
 
     if (response.ok) {
-      alert("Turno reservado con exito");
+      alert("Turno reservado");
       window.location.reload();
     } else {
       alert("Error al reservar turno");
@@ -58,11 +58,15 @@ function renderizarDetalleCancha(cancha) {
 
   // Inicializar mapa de Leaflet
   if (cancha.lat && cancha.lng) {
-    const mapDetalle = L.map("mapDetalle").setView([cancha.lat, cancha.lng], 15);
+    const mapDetalle = L.map("mapDetalle").setView(
+      [cancha.lat, cancha.lng],
+      15
+    );
 
     L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
       maxZoom: 19,
-      attribution: '&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a>',
+      attribution:
+        '&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a>',
     }).addTo(mapDetalle);
 
     L.marker([cancha.lat, cancha.lng])

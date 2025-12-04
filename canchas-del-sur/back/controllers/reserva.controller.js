@@ -16,3 +16,13 @@ export const add = async (req, res) => {
   await Turno.update(idTurno, newId);
   res.status(201).json(reserva);
 };
+export const getAllByIdUsuario = async (req, res) => {
+  const { idUsuario } = req.params;
+  const reservas = await Reserva.getAllByIdUsuario(parseInt(idUsuario));
+  res.status(200).json(reservas);
+};
+export const cancelarReserva = async (req, res) => {
+  const { id } = req.params;
+  await Reserva.cancelarReserva(parseInt(id));
+res.status(200).json();
+};
