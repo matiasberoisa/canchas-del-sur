@@ -1,3 +1,4 @@
+import { haversineDistance } from "../utils/calcDistanciaKm.js";
 import { read, write } from "../utils/readFiles.js";
 import { Cancha } from "./cancha.model.js";
 
@@ -74,22 +75,19 @@ export class Turno {
       horarioHasta: turno.horarioHasta,
     }));
   }
-  static async traerPartidosCerca(lat, lon, distancia) {
+  static async traerPartidosCerca(lat, lon, distanciaKm) {
     const turnosAll = await this.getAll();
     const canchas = await Cancha.getAll();
+
     const partidosCercanos = turnosAll
-      .filter((turno) => turno.reservaId !== null) // Solo turnos reservados
+      .filter((turno) => turno.reservaId !== null)
       .map((turno) => {
         const cancha = canchas.data.find((c) => c.id === turno.canchaId);
         if (!cancha) return null;
-        
-        const canchaLat = cancha.lat;
-        const canchaLon = cancha.lng;
-        const d = Math.sqrt(
-          Math.pow(canchaLat - lat, 2) + Math.pow(canchaLon - lon, 2)
-        );
-        
-        if (d <= distancia) {
+
+        const d = haversineDistance(lat, lon, cancha.lat, cancha.lng);
+
+        if (d <= distanciaKm) {
           return {
             ...turno,
             cancha: {
@@ -98,14 +96,16 @@ export class Turno {
               tipo: cancha.tipo,
               ubicacion: cancha.ubicacion,
               lat: cancha.lat,
-              lng: cancha.lng
-            }
+              lng: cancha.lng,
+            },
+            distancia: d, // opcional, útil si querés ordenarlos
           };
         }
+
         return null;
       })
       .filter((turno) => turno !== null);
-    
+
     return partidosCercanos;
   }
 }

@@ -13,7 +13,7 @@ window.onload = function () {
     (pos) => {
       lat = pos.coords.latitude;
       lon = pos.coords.longitude;
-
+console.log("Ubicación obtenida:", lat, lon);
       map = L.map("map").setView([lat, lon], 14);
 
       L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
@@ -66,7 +66,7 @@ window.onload = function () {
           const response = await fetch(
             `/api/turnos/partidosCerca?long=${lon}&lat=${lat}&distancia=${distanciaKm}`
           );
-
+console.log("Respuesta recibida:", response);
           if (!response.ok) {
             throw new Error("Error al obtener partidos");
           }
