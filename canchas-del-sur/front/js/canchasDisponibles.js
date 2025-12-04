@@ -2,7 +2,6 @@ export function cargarYmostrarCanchas() {
   fetch("/api/canchas/tipos")
     .then((response) => response.json())
     .then((data) => {
-      console.log(data);
       mostrarTiposCanchas(data);
     })
     .catch((error) => {

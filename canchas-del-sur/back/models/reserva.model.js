@@ -1,4 +1,4 @@
-import { read } from "../utils/readFiles.js";
+import { read, write } from "../utils/readFiles.js";
 
 const PATH = "./data/reservas.json";
 export class Reserva {

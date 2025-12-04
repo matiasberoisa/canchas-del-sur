@@ -153,8 +153,18 @@ footer {
     justify-content: space-between;
     align-items: center;
 }
+#horarios {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding-left: 0;
+    justify-content: center;
+    align-items: center;
+}
 
-.btnDias {
+.btn {
     width: 10rem;
     background-color: rgb(2, 133, 65);
     color: white;
@@ -165,7 +175,7 @@ footer {
     font-weight: bold;
 }
 
-.btnDias :active {
+.btn :active {
     background-color: white;
     color: rgb(2, 133, 65);
 }

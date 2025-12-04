@@ -4,6 +4,8 @@
     "nombre": "Cancha Sicolo 1",
     "tipo": "FUTBOL 11",
     "ubicacion": "Neuquén, Complejo Sicolo",
+    "lat": -38.9565375,
+    "lng": -67.9172679,
     "imagen": "futbol11.png",
     "descripcion": "Cancha de césped sintético, iluminación, parrillas y duchas.",
     "servicios": [
@@ -30,6 +32,8 @@
     "nombre": "Cancha Deportivo 1",
     "tipo": "TENIS",
     "ubicacion": "Plottier, Club Deportivo",
+    "lat": -38.9350,
+    "lng": -68.2300,
     "imagen": "tenis.jfif",
     "descripcion": "Cancha de Tenis polvo ladrillo y tribunas.",
     "servicios": [
@@ -49,6 +53,8 @@
     "nombre": "Estadio Central",
     "tipo": "BASQUET",
     "ubicacion": "Neuquén, Estadio Central",
+    "lat": -38.9516,
+    "lng": -68.0591,
     "imagen": "basquet.png",
     "descripcion": "Cancha de Basquet con piso de madera, vestuarios y buffet.",
     "servicios": [

@@ -1,4 +1,4 @@
-import { Turno } from "../models/turno.models.js";
+import { Turno } from "../models/turno.model.js";
 export const getByIdCancha = async (req, res) => {
   const { idCancha } = req.query;
   const turnos = await Turno.getByCanchaId(parseInt(idCancha));
@@ -20,7 +20,7 @@ export const addAll = async (req, res) => {
       let nuevoTurno = new Turno(
         newId,
         idCancha,
-        comienzo,
+        new Date(comienzo),
         horarioDesde,
         horarioHasta
       );
@@ -32,3 +32,13 @@ export const addAll = async (req, res) => {
   await Turno.addAll(nuevosTurnos);
   res.status(201).json(nuevosTurnos);
 };
+export const getDiasDisponiblesByCancha = async (req, res) => {
+  const { canchaId } = req.query;
+  const diasDisponibles = await Turno.getDiasDisponiblesByCancha(parseInt(canchaId));
+  res.status(200).json(diasDisponibles);
+}
+export const getHorariosByDias = async (req, res) => {
+  const { canchaId, fecha } = req.query;
+  const horariosDisponibles = await Turno.getHorariosByDias(parseInt(canchaId), fecha);
+  res.status(200).json(horariosDisponibles);
+}

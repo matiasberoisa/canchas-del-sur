@@ -1,8 +1,8 @@
 export function estaLogueado() {
-  return localStorage.getItem("userId") !== null;
+  return localStorage.getItem("idUsuario") !== null;
 }
 export function logout() {
-  localStorage.removeItem("userId");
+  localStorage.removeItem("idUsuario");
   localStorage.removeItem("username");
   window.location.href = "http://localhost:3030/index.html";
 }
@@ -75,12 +75,17 @@ export function login() {
     const username = document.getElementById("user").value.trim();
     const password = document.getElementById("password").value.trim();
 
-    const respuesta = await fetch(`/api/login?username=${encodeURIComponent(username)}&password=${encodeURIComponent(password)}`, {
-      method: "GET"
-    });
+    const respuesta = await fetch(
+      `/api/login?username=${encodeURIComponent(
+        username
+      )}&password=${encodeURIComponent(password)}`,
+      {
+        method: "GET",
+      }
+    );
     const data = await respuesta.json();
-    if (data.success) {
-      localStorage.setItem("userId", data.userId);
+    if (data) {
+      localStorage.setItem("idUsuario", data.id);
       localStorage.setItem("username", username);
 
       window.location.reload();

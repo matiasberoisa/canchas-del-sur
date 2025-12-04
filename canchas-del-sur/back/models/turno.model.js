@@ -1,4 +1,4 @@
-import { read } from "../utils/readFiles.js";
+import { read, write } from "../utils/readFiles.js";
 
 const PATH = "./data/turnos.json";
 export class Turno {
@@ -15,7 +15,9 @@ export class Turno {
     return turnos;
   }
   static async addAll(turnos) {
-    await write(PATH, turnos);
+    const allTurnos = await this.getAll();
+    allTurnos.push(...turnos);
+    await write(PATH, allTurnos);
   }
   static async getLastId() {
     const turnos = await this.getAll();
@@ -26,30 +28,49 @@ export class Turno {
     const turnos = await this.getAll();
     return turnos.find((turno) => turno.id === id);
   }
+  static async update(id, reservaId) {
+    const turnos = await this.getAll();
+    const turno = turnos.find((t) => t.id === id);
+    if (turno) {
+      turno.reservaId = reservaId;
+      await write(PATH, turnos);
+    }
+    return turno;
+  }
   static async getDiasDisponiblesByCancha(canchaId) {
     const turnosAll = await this.getAll();
     const turnosFiltrados = turnosAll.filter(
       (turno) => turno.canchaId === canchaId && !turno.reservaId
     );
-
-    return turnosFiltrados
-      .map((turno) => ({
-        ...turno,
-        fecha: new Date(turno.fecha).toISOString().split("T")[0],
-      }))
-      .sort((a, b) => new Date(a.fecha) - new Date(b.fecha));
+    return Promise.all(
+      turnosFiltrados
+        .map(async (turno) => ({
+          ...turno,
+          fecha: new Date(turno.fecha).toISOString().split("T")[0],
+          dia: new Date(turno.fecha).toLocaleDateString("es-ES", {
+            weekday: "long",
+          }),
+          horarios: await this.getHorariosByDias(
+            canchaId,
+            new Date(turno.fecha).toISOString().split("T")[0]
+          ),
+        }))
+        .sort((a, b) => new Date(a.fecha) - new Date(b.fecha))
+    );
   }
   static async getHorariosByDias(canchaId, fecha) {
     const turnosAll = await this.getAll();
     const turnosFiltrados = turnosAll.filter(
       (turno) =>
         turno.canchaId === canchaId &&
-        new Date(turno.fecha).toISOString().split('T')[0] === fecha &&
+        new Date(turno.fecha).toISOString().split("T")[0] === fecha &&
         turno.reservaId === null
     );
 
-    return turnosFiltrados.sort((a, b) =>
-      a.horarioDesde.localeCompare(b.horarioDesde)
-    );
+    return turnosFiltrados.map((turno) => ({
+      id: turno.id,
+      horarioDesde: turno.horarioDesde,
+      horarioHasta: turno.horarioHasta,
+    }));
   }
 }
