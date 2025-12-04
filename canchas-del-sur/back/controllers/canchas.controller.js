@@ -13,6 +13,11 @@ export const obtenerCanchas = async (req, res) => {
   const canchas = await Cancha.getAll(tipo,search, page, limit);
   res.status(200).json(canchas);
 };
+export const obtenerCanchaById = async (req, res) => {
+  const { id } = req.query;
+  const cancha = await Cancha.getById(parseInt(id));
+  res.status(200).json(cancha);
+}
 export const dowloadImg = (req, res) => {
   const { nombreImg } = req.query;
   const imagePath = path.join(__dirname, "../data/img", nombreImg);

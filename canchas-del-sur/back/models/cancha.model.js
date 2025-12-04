@@ -12,7 +12,7 @@ export class Cancha {
     this.descripcion = descripcion;
     this.servicios = servicios;
   }
-  static async getAllTipos  () {
+  static async getAllTipos() {
     const tipos = await read(PATH_TIPOS);
     return tipos;
   }
@@ -25,23 +25,29 @@ export class Cancha {
     }
     if (search) {
       canchas = canchas.filter((cancha) => {
-        return cancha.nombre && cancha.nombre.toLowerCase().includes(search.toLowerCase());
+        return (
+          cancha.nombre &&
+          cancha.nombre.toLowerCase().includes(search.toLowerCase())
+        );
       });
     }
 
     const startIndex = (page - 1) * limit;
     const endIndex = startIndex + limit;
     const canchasPaginadas = canchas.slice(startIndex, endIndex);
-    
+
     return {
       data: canchasPaginadas,
       pagination: {
-        currentPage: page,        totalPages: Math.ceil(canchas.length / limit),
+        currentPage: page,
+        totalPages: Math.ceil(canchas.length / limit),
         totalItems: canchas.length,
-        itemsPerPage: limit
-
-      }
+        itemsPerPage: limit,
+      },
     };
   }
-
+  static async getById(id) {
+    const canchas = await this.getAll();
+    return canchas.data.find((cancha) => cancha.id === id);
   }
+}

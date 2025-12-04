@@ -1,5 +1,9 @@
 import { Turno } from "../models/turno.models.js";
-
+export const getByIdCancha = async (req, res) => {
+  const { idCancha } = req.query;
+  const turnos = await Turno.getByCanchaId(parseInt(idCancha));
+  res.status(200).json(turnos);
+}
 export const addAll = async (req, res) => {
   const dataTurnos = req.body;
   let nuevosTurnos = [];

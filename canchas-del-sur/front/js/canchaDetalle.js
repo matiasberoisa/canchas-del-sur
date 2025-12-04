@@ -13,7 +13,7 @@ function obtenerParametroURL(nombre) {
 }
 
 function renderizarDetalleCancha(cancha) {
-  document.getElementById("imagenCancha").src = cancha.imagen;
+  document.getElementById("imagenCancha").src = `/api/canchas/download?nombreImg=${cancha.imagen}`;
   document.querySelector("#cancha h2").textContent = cancha.tipo;
   document.querySelector("#ubicacion span").textContent = cancha.ubicacion;
   document.querySelector("#descripcion p").textContent = cancha.descripcion;
@@ -40,12 +40,11 @@ function renderizarDetalleCancha(cancha) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  const id = obtenerParametroURL("id");
-  fetch("/api/canchas")
+  const urlParams = new URLSearchParams(window.location.search);
+  const id = urlParams.get("id");
+  fetch(`/api/canchas/byId?id=${id}`)
     .then((res) => res.json())
-    .then((canchas) => {
-      const cancha = canchas.find((c) => c.id == id);
-
+    .then((cancha) => {
       renderizarDetalleCancha(cancha);
     })
     .catch(() => {

@@ -26,5 +26,30 @@ export class Turno {
     const turnos = await this.getAll();
     return turnos.find((turno) => turno.id === id);
   }
-  static async getByCanchaId(canchaId) {}
+  static async getDiasDisponiblesByCancha(canchaId) {
+    const turnosAll = await this.getAll();
+    const turnosFiltrados = turnosAll.filter(
+      (turno) => turno.canchaId === canchaId && !turno.reservaId
+    );
+
+    return turnosFiltrados
+      .map((turno) => ({
+        ...turno,
+        fecha: new Date(turno.fecha).toISOString().split("T")[0],
+      }))
+      .sort((a, b) => new Date(a.fecha) - new Date(b.fecha));
+  }
+  static async getHorariosByDias(canchaId, fecha) {
+    const turnosAll = await this.getAll();
+    const turnosFiltrados = turnosAll.filter(
+      (turno) =>
+        turno.canchaId === canchaId &&
+        new Date(turno.fecha).toISOString().split('T')[0] === fecha &&
+        turno.reservaId === null
+    );
+
+    return turnosFiltrados.sort((a, b) =>
+      a.horarioDesde.localeCompare(b.horarioDesde)
+    );
+  }
 }
