@@ -20,7 +20,7 @@ export async function cargarReservasUsuario(userId) {
       const reservaCard = document.createElement("div");
       reservaCard.innerHTML = `
         <div id="reservaData">
-          <img src="/api/canchas/download?nombreImg=${
+          <img src="/api/canchas/download/${
             reserva.turno.cancha.imagen
           }" alt="${reserva.turno.cancha.nombre}">
           <div>

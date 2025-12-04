@@ -17,6 +17,9 @@ export const obtenerCanchas = async (req, res) => {
 export const obtenerCanchaById = async (req, res) => {
   const { id } = req.params;
   const cancha = await Cancha.getById(parseInt(id));
+  if (!cancha) {
+    return res.status(404).json({ error: "No existe la cancha" });
+  }
   const turnosDiasDisponibles = await Turno.getDiasDisponiblesByCancha(
     cancha.id
   );
@@ -24,7 +27,7 @@ export const obtenerCanchaById = async (req, res) => {
   res.status(200).json(cancha);
 };
 export const dowloadImg = (req, res) => {
-  const { nombreImg } = req.query;
+  const { nombreImg } = req.params;
   const imagePath = path.join(__dirname, "../data/img", nombreImg);
   res.sendFile(imagePath, (err) => {
     if (err) {

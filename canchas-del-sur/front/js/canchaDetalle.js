@@ -51,7 +51,7 @@ function obtenerParametroURL(nombre) {
 function renderizarDetalleCancha(cancha) {
   document.getElementById(
     "imagenCancha"
-  ).src = `/api/canchas/download?nombreImg=${cancha.imagen}`;
+  ).src = `/api/canchas/download/${cancha.imagen}`;
   document.querySelector("#cancha h2").textContent = cancha.tipo;
   document.querySelector("#ubicacion span").textContent = cancha.ubicacion;
   document.querySelector("#descripcion p").textContent = cancha.descripcion;

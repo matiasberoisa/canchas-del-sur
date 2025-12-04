@@ -44,7 +44,7 @@ export class Turno {
     const turnosFiltrados = turnosAll.filter(
       (turno) => turno.canchaId === canchaId && !turno.reservaId
     );
-    return Promise.all(
+    const turnos = Promise.all(
       turnosFiltrados
         .map(async (turno) => ({
           ...turno,
@@ -59,6 +59,7 @@ export class Turno {
         }))
         .sort((a, b) => new Date(a.fecha) - new Date(b.fecha))
     );
+    return turnos;
   }
   static async getHorariosByDias(canchaId, fecha) {
     const turnosAll = await this.getAll();

@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { add, getAllByIdUsuario,cancelarReserva } from "../controllers/reserva.controller.js";
-
+import { validationRequestTypes } from "../middlewares/validationRequestTypes.js";
 const router = Router();
 router.delete("/:id",validationRequestTypes({params: ["id"]}), cancelarReserva);
 router.get("/byUsuario/:idUsuario",validationRequestTypes({params: ["idUsuario"]}), getAllByIdUsuario);

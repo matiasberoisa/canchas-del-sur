@@ -4,7 +4,7 @@
     "nombre": "Cancha Sicolo 1",
     "tipo": "FUTBOL 11",
     "ubicacion": "Neuquén, Complejo Sicolo",
-    "lat": -38.949597, 
+    "lat": -38.949597,
     "lng": -68.076888,
     "imagen": "futbol11.png",
     "descripcion": "Cancha de césped sintético, iluminación, parrillas y duchas.",
@@ -32,8 +32,8 @@
     "nombre": "Cancha Deportivo 1",
     "tipo": "TENIS",
     "ubicacion": "Plottier, Club Deportivo",
-    "lat": -38.9350,
-    "lng": -68.2300,
+    "lat": -38.935,
+    "lng": -68.23,
     "imagen": "tenis.jfif",
     "descripcion": "Cancha de Tenis polvo ladrillo y tribunas.",
     "servicios": [
@@ -71,6 +71,783 @@
         "nombre": "Buffet",
         "icon": "<i class=\"fa-solid fa-drumstick-bite\"></i>"
       }
+    ]
+  },
+
+  {
+    "id": 4,
+    "nombre": "Cancha Sicolo 2",
+    "tipo": "FUTBOL 11",
+    "ubicacion": "Neuquén, Complejo Sicolo",
+    "lat": -38.9491,
+    "lng": -68.0772,
+    "imagen": "futbol11.png",
+    "descripcion": "Césped sintético premium con iluminación LED.",
+    "servicios": [
+      {
+        "nombre": "Parrilla",
+        "icon": "<i class=\"fa-solid fa-utensils\"></i>"
+      },
+      {
+        "nombre": "Vestuarios",
+        "icon": "<i class=\"fa-solid fa-user-alt\"></i>"
+      },
+      {
+        "nombre": "Iluminación",
+        "icon": "<i class=\"fa-solid fa-lightbulb\"></i>"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "nombre": "Cancha Sicolo 3",
+    "tipo": "FUTBOL 11",
+    "ubicacion": "Neuquén, Complejo Sicolo",
+    "lat": -38.9498,
+    "lng": -68.0763,
+    "imagen": "futbol11.png",
+    "descripcion": "Césped sintético con techo parcial y bancos de suplentes.",
+    "servicios": [
+      {
+        "nombre": "Estacionamiento",
+        "icon": "<i class=\"fa-solid fa-car-side\"></i>"
+      },
+      {
+        "nombre": "Iluminación",
+        "icon": "<i class=\"fa-solid fa-lightbulb\"></i>"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "nombre": "Cancha Patagonia 1",
+    "tipo": "FUTBOL 11",
+    "ubicacion": "Neuquén, Barrio Patagonia",
+    "lat": -38.94,
+    "lng": -68.095,
+    "imagen": "futbol11.png",
+    "descripcion": "Cancha municipal con césped natural.",
+    "servicios": [
+      { "nombre": "Tribunas", "icon": "<i class=\"fa-solid fa-chair\"></i>" },
+      {
+        "nombre": "Vestuarios",
+        "icon": "<i class=\"fa-solid fa-user-alt\"></i>"
+      }
+    ]
+  },
+
+  {
+    "id": 7,
+    "nombre": "Cancha Patagonia 2",
+    "tipo": "FUTBOL 11",
+    "ubicacion": "Neuquén, Barrio Patagonia",
+    "lat": -38.9408,
+    "lng": -68.0961,
+    "imagen": "futbol11.png",
+    "descripcion": "Césped natural, iluminación nocturna.",
+    "servicios": [
+      {
+        "nombre": "Iluminación",
+        "icon": "<i class=\"fa-solid fa-lightbulb\"></i>"
+      }
+    ]
+  },
+
+  {
+    "id": 8,
+    "nombre": "Cancha Independencia 1",
+    "tipo": "FUTBOL 11",
+    "ubicacion": "Neuquén, Club Independencia",
+    "lat": -38.9571,
+    "lng": -68.0652,
+    "imagen": "futbol11.png",
+    "descripcion": "Cancha oficial con tribunas y vestuarios completos.",
+    "servicios": [
+      { "nombre": "Tribunas", "icon": "<i class=\"fa-solid fa-chair\"></i>" },
+      {
+        "nombre": "Vestuarios",
+        "icon": "<i class=\"fa-solid fa-user-alt\"></i>"
+      },
+      {
+        "nombre": "Buffet",
+        "icon": "<i class=\"fa-solid fa-drumstick-bite\"></i>"
+      }
+    ]
+  },
+
+  {
+    "id": 9,
+    "nombre": "Cancha Independencia 2",
+    "tipo": "FUTBOL 11",
+    "ubicacion": "Neuquén, Club Independencia",
+    "lat": -38.9578,
+    "lng": -68.0658,
+    "imagen": "futbol11.png",
+    "descripcion": "Césped sintético nuevo con techo.",
+    "servicios": [
+      {
+        "nombre": "Iluminación",
+        "icon": "<i class=\"fa-solid fa-lightbulb\"></i>"
+      }
+    ]
+  },
+
+  {
+    "id": 10,
+    "nombre": "Cancha Rincón FC 1",
+    "tipo": "FUTBOL 11",
+    "ubicacion": "Rincón, Complejo Municipal",
+    "lat": -38.8271,
+    "lng": -68.0452,
+    "imagen": "futbol11.png",
+    "descripcion": "Cancha con césped natural y parrillas.",
+    "servicios": [
+      { "nombre": "Parrilla", "icon": "<i class=\"fa-solid fa-utensils\"></i>" }
+    ]
+  },
+
+  {
+    "id": 11,
+    "nombre": "Cancha Rincón FC 2",
+    "tipo": "FUTBOL 11",
+    "ubicacion": "Rincón, Complejo Municipal",
+    "lat": -38.8276,
+    "lng": -68.046,
+    "imagen": "futbol11.png",
+    "descripcion": "Iluminación LED nueva.",
+    "servicios": [
+      {
+        "nombre": "Iluminación",
+        "icon": "<i class=\"fa-solid fa-lightbulb\"></i>"
+      }
+    ]
+  },
+
+  {
+    "id": 12,
+    "nombre": "Cancha Megadeportes 1",
+    "tipo": "FUTBOL 11",
+    "ubicacion": "Cipolletti, Megadeportes",
+    "lat": -38.9375,
+    "lng": -68.0089,
+    "imagen": "futbol11.png",
+    "descripcion": "Césped sintético profesional.",
+    "servicios": [
+      {
+        "nombre": "Vestuarios",
+        "icon": "<i class=\"fa-solid fa-user-alt\"></i>"
+      }
+    ]
+  },
+
+  {
+    "id": 13,
+    "nombre": "Cancha Megadeportes 2",
+    "tipo": "FUTBOL 11",
+    "ubicacion": "Cipolletti, Megadeportes",
+    "lat": -38.9371,
+    "lng": -68.0093,
+    "imagen": "futbol11.png",
+    "descripcion": "Tribunas y buffet disponibles.",
+    "servicios": [
+      { "nombre": "Tribunas", "icon": "<i class=\"fa-solid fa-chair\"></i>" },
+      {
+        "nombre": "Buffet",
+        "icon": "<i class=\"fa-solid fa-drumstick-bite\"></i>"
+      }
+    ]
+  },
+
+  {
+    "id": 14,
+    "nombre": "Cancha Altos del Limay 1",
+    "tipo": "FUTBOL 11",
+    "ubicacion": "Neuquén, Altos del Limay",
+    "lat": -38.9642,
+    "lng": -68.1044,
+    "imagen": "futbol11.png",
+    "descripcion": "Césped sintético y estacionamiento amplio.",
+    "servicios": [
+      {
+        "nombre": "Estacionamiento",
+        "icon": "<i class=\"fa-solid fa-car-side\"></i>"
+      }
+    ]
+  },
+
+  {
+    "id": 15,
+    "nombre": "Cancha Altos del Limay 2",
+    "tipo": "FUTBOL 11",
+    "ubicacion": "Neuquén, Altos del Limay",
+    "lat": -38.9638,
+    "lng": -68.1051,
+    "imagen": "futbol11.png",
+    "descripcion": "Iluminación LED, vestuarios y parrillas.",
+    "servicios": [
+      {
+        "nombre": "Parrilla",
+        "icon": "<i class=\"fa-solid fa-utensils\"></i>"
+      },
+      {
+        "nombre": "Vestuarios",
+        "icon": "<i class=\"fa-solid fa-user-alt\"></i>"
+      },
+      {
+        "nombre": "Iluminación",
+        "icon": "<i class=\"fa-solid fa-lightbulb\"></i>"
+      }
+    ]
+  },
+
+  {
+    "id": 16,
+    "nombre": "Cancha Deportivo 2",
+    "tipo": "TENIS",
+    "ubicacion": "Plottier, Club Deportivo",
+    "lat": -38.934,
+    "lng": -68.229,
+    "imagen": "tenis.jfif",
+    "descripcion": "Cancha de polvo ladrillo iluminada.",
+    "servicios": [
+      {
+        "nombre": "Buffet",
+        "icon": "<i class=\"fa-solid fa-drumstick-bite\"></i>"
+      }
+    ]
+  },
+
+  {
+    "id": 17,
+    "nombre": "Cancha Deportivo 3",
+    "tipo": "TENIS",
+    "ubicacion": "Plottier, Club Deportivo",
+    "lat": -38.9338,
+    "lng": -68.2309,
+    "imagen": "tenis.jfif",
+    "descripcion": "Canchas techadas para entrenamiento.",
+    "servicios": [
+      {
+        "nombre": "Estacionamiento",
+        "icon": "<i class=\"fa-solid fa-car-side\"></i>"
+      }
+    ]
+  },
+
+  {
+    "id": 18,
+    "nombre": "Tenis Patagonia 1",
+    "tipo": "TENIS",
+    "ubicacion": "Neuquén, Patagonia",
+    "lat": -38.945,
+    "lng": -68.1,
+    "imagen": "tenis.jfif",
+    "descripcion": "Superficie dura con iluminación.",
+    "servicios": [
+      {
+        "nombre": "Iluminación",
+        "icon": "<i class=\"fa-solid fa-lightbulb\"></i>"
+      }
+    ]
+  },
+
+  {
+    "id": 19,
+    "nombre": "Tenis Patagonia 2",
+    "tipo": "TENIS",
+    "ubicacion": "Neuquén, Patagonia",
+    "lat": -38.944,
+    "lng": -68.1014,
+    "imagen": "tenis.jfif",
+    "descripcion": "Tenis de polvo ladrillo tradicional.",
+    "servicios": [
+      { "nombre": "Tribunas", "icon": "<i class=\"fa-solid fa-chair\"></i>" }
+    ]
+  },
+
+  {
+    "id": 20,
+    "nombre": "Tenis Municipal 1",
+    "tipo": "TENIS",
+    "ubicacion": "Neuquén, Complejo Municipal",
+    "lat": -38.9531,
+    "lng": -68.057,
+    "imagen": "tenis.jfif",
+    "descripcion": "Cancha con drenaje especial para lluvia.",
+    "servicios": [
+      {
+        "nombre": "Buffet",
+        "icon": "<i class=\"fa-solid fa-drumstick-bite\"></i>"
+      }
+    ]
+  },
+
+  {
+    "id": 21,
+    "nombre": "Tenis Municipal 2",
+    "tipo": "TENIS",
+    "ubicacion": "Neuquén, Complejo Municipal",
+    "lat": -38.9535,
+    "lng": -68.0581,
+    "imagen": "tenis.jfif",
+    "descripcion": "Iluminación nueva y estacionamiento.",
+    "servicios": [
+      {
+        "nombre": "Estacionamiento",
+        "icon": "<i class=\"fa-solid fa-car-side\"></i>"
+      }
+    ]
+  },
+
+  {
+    "id": 22,
+    "nombre": "Tenis Megadeportes 1",
+    "tipo": "TENIS",
+    "ubicacion": "Cipolletti, Megadeportes",
+    "lat": -38.9366,
+    "lng": -68.0063,
+    "imagen": "tenis.jfif",
+    "descripcion": "Doble cancha de polvo ladrillo techada.",
+    "servicios": [
+      { "nombre": "Tribunas", "icon": "<i class=\"fa-solid fa-chair\"></i>" }
+    ]
+  },
+
+  {
+    "id": 23,
+    "nombre": "Tenis Megadeportes 2",
+    "tipo": "TENIS",
+    "ubicacion": "Cipolletti, Megadeportes",
+    "lat": -38.9372,
+    "lng": -68.0069,
+    "imagen": "tenis.jfif",
+    "descripcion": "Superficie rápida con iluminación.",
+    "servicios": [
+      {
+        "nombre": "Iluminación",
+        "icon": "<i class=\"fa-solid fa-lightbulb\"></i>"
+      }
+    ]
+  },
+
+  {
+    "id": 24,
+    "nombre": "Tenis Altos del Limay 1",
+    "tipo": "TENIS",
+    "ubicacion": "Neuquén, Altos del Limay",
+    "lat": -38.9652,
+    "lng": -68.1038,
+    "imagen": "tenis.jfif",
+    "descripcion": "Cancha profesional con tribunas.",
+    "servicios": [
+      { "nombre": "Tribunas", "icon": "<i class=\"fa-solid fa-chair\"></i>" }
+    ]
+  },
+
+  {
+    "id": 25,
+    "nombre": "Tenis Altos del Limay 2",
+    "tipo": "TENIS",
+    "ubicacion": "Neuquén, Altos del Limay",
+    "lat": -38.9647,
+    "lng": -68.1051,
+    "imagen": "tenis.jfif",
+    "descripcion": "Superficie dura apta para torneos.",
+    "servicios": [
+      {
+        "nombre": "Buffet",
+        "icon": "<i class=\"fa-solid fa-drumstick-bite\"></i>"
+      }
+    ]
+  },
+
+  {
+    "id": 26,
+    "nombre": "Tenis Rincón 1",
+    "tipo": "TENIS",
+    "ubicacion": "Rincón de los Sauces",
+    "lat": -38.8251,
+    "lng": -68.0455,
+    "imagen": "tenis.jfif",
+    "descripcion": "Canchas nuevas de polvo ladrillo.",
+    "servicios": [
+      {
+        "nombre": "Estacionamiento",
+        "icon": "<i class=\"fa-solid fa-car-side\"></i>"
+      }
+    ]
+  },
+
+  {
+    "id": 27,
+    "nombre": "Tenis Rincón 2",
+    "tipo": "TENIS",
+    "ubicacion": "Rincón de los Sauces",
+    "lat": -38.8258,
+    "lng": -68.0442,
+    "imagen": "tenis.jfif",
+    "descripcion": "Iluminación LED y tribunas pequeñas.",
+    "servicios": [
+      { "nombre": "Tribunas", "icon": "<i class=\"fa-solid fa-chair\"></i>" }
+    ]
+  },
+
+  {
+    "id": 28,
+    "nombre": "Tenis El Chañar 1",
+    "tipo": "TENIS",
+    "ubicacion": "San Patricio del Chañar",
+    "lat": -38.5921,
+    "lng": -68.3654,
+    "imagen": "tenis.jfif",
+    "descripcion": "Cancha municipal con superficie dura.",
+    "servicios": [
+      {
+        "nombre": "Iluminación",
+        "icon": "<i class=\"fa-solid fa-lightbulb\"></i>"
+      }
+    ]
+  },
+
+  {
+    "id": 29,
+    "nombre": "Tenis El Chañar 2",
+    "tipo": "TENIS",
+    "ubicacion": "San Patricio del Chañar",
+    "lat": -38.5914,
+    "lng": -68.3662,
+    "imagen": "tenis.jfif",
+    "descripcion": "Canchas dobles techadas.",
+    "servicios": [
+      {
+        "nombre": "Estacionamiento",
+        "icon": "<i class=\"fa-solid fa-car-side\"></i>"
+      }
+    ]
+  },
+
+  {
+    "id": 30,
+    "nombre": "Tenis Norte 1",
+    "tipo": "TENIS",
+    "ubicacion": "Neuquén, Zona Norte",
+    "lat": -38.9142,
+    "lng": -68.0871,
+    "imagen": "tenis.jfif",
+    "descripcion": "Cancha con iluminación y tribunas.",
+    "servicios": [
+      { "nombre": "Tribunas", "icon": "<i class=\"fa-solid fa-chair\"></i>" },
+      {
+        "nombre": "Iluminación",
+        "icon": "<i class=\"fa-solid fa-lightbulb\"></i>"
+      }
+    ]
+  },
+
+  {
+    "id": 31,
+    "nombre": "Estadio Central 2",
+    "tipo": "BASQUET",
+    "ubicacion": "Neuquén, Estadio Central",
+    "lat": -38.9512,
+    "lng": -68.0598,
+    "imagen": "basquet.png",
+    "descripcion": "Piso profesional y tableros electrónicos.",
+    "servicios": [
+      { "nombre": "Tribunas", "icon": "<i class=\"fa-solid fa-chair\"></i>" },
+      {
+        "nombre": "Vestuarios",
+        "icon": "<i class=\"fa-solid fa-user-alt\"></i>"
+      }
+    ]
+  },
+
+  {
+    "id": 32,
+    "nombre": "Polideportivo Norte 1",
+    "tipo": "BASQUET",
+    "ubicacion": "Neuquén, Polideportivo Norte",
+    "lat": -38.9263,
+    "lng": -68.0912,
+    "imagen": "basquet.png",
+    "descripcion": "Cancha techada con piso flotante.",
+    "servicios": [
+      {
+        "nombre": "Estacionamiento",
+        "icon": "<i class=\"fa-solid fa-car-side\"></i>"
+      }
+    ]
+  },
+
+  {
+    "id": 33,
+    "nombre": "Polideportivo Norte 2",
+    "tipo": "BASQUET",
+    "ubicacion": "Neuquén, Polideportivo Norte",
+    "lat": -38.9267,
+    "lng": -68.0924,
+    "imagen": "basquet.png",
+    "descripcion": "Iluminación LED y tribunas.",
+    "servicios": [
+      {
+        "nombre": "Iluminación",
+        "icon": "<i class=\"fa-solid fa-lightbulb\"></i>"
+      },
+      { "nombre": "Tribunas", "icon": "<i class=\"fa-solid fa-chair\"></i>" }
+    ]
+  },
+
+  {
+    "id": 34,
+    "nombre": "Club Plaza 1",
+    "tipo": "BASQUET",
+    "ubicacion": "Neuquén, Club Plaza",
+    "lat": -38.951,
+    "lng": -68.0741,
+    "imagen": "basquet.png",
+    "descripcion": "Cancha con piso de madera clásico.",
+    "servicios": [
+      {
+        "nombre": "Vestuarios",
+        "icon": "<i class=\"fa-solid fa-user-alt\"></i>"
+      }
+    ]
+  },
+
+  {
+    "id": 35,
+    "nombre": "Club Plaza 2",
+    "tipo": "BASQUET",
+    "ubicacion": "Neuquén, Club Plaza",
+    "lat": -38.9514,
+    "lng": -68.0749,
+    "imagen": "basquet.png",
+    "descripcion": "Iluminación nueva y gradas laterales.",
+    "servicios": [
+      {
+        "nombre": "Iluminación",
+        "icon": "<i class=\"fa-solid fa-lightbulb\"></i>"
+      }
+    ]
+  },
+
+  {
+    "id": 36,
+    "nombre": "Básquet Altos del Limay 1",
+    "tipo": "BASQUET",
+    "ubicacion": "Neuquén, Altos del Limay",
+    "lat": -38.9658,
+    "lng": -68.1048,
+    "imagen": "basquet.png",
+    "descripcion": "Cancha techada con buffet.",
+    "servicios": [
+      {
+        "nombre": "Buffet",
+        "icon": "<i class=\"fa-solid fa-drumstick-bite\"></i>"
+      }
+    ]
+  },
+
+  {
+    "id": 37,
+    "nombre": "Básquet Altos del Limay 2",
+    "tipo": "BASQUET",
+    "ubicacion": "Neuquén, Altos del Limay",
+    "lat": -38.9663,
+    "lng": -68.1034,
+    "imagen": "basquet.png",
+    "descripcion": "Con tribunas amplias y estacionamiento.",
+    "servicios": [
+      { "nombre": "Tribunas", "icon": "<i class=\"fa-solid fa-chair\"></i>" },
+      {
+        "nombre": "Estacionamiento",
+        "icon": "<i class=\"fa-solid fa-car-side\"></i>"
+      }
+    ]
+  },
+
+  {
+    "id": 38,
+    "nombre": "Básquet Deportivo 1",
+    "tipo": "BASQUET",
+    "ubicacion": "Plottier, Deportivo Municipal",
+    "lat": -38.9362,
+    "lng": -68.2321,
+    "imagen": "basquet.png",
+    "descripcion": "Cancha multiuso con piso vinílico.",
+    "servicios": [
+      {
+        "nombre": "Vestuarios",
+        "icon": "<i class=\"fa-solid fa-user-alt\"></i>"
+      }
+    ]
+  },
+
+  {
+    "id": 39,
+    "nombre": "Básquet Deportivo 2",
+    "tipo": "BASQUET",
+    "ubicacion": "Plottier, Deportivo Municipal",
+    "lat": -38.9369,
+    "lng": -68.2315,
+    "imagen": "basquet.png",
+    "descripcion": "Iluminación LED y gradas laterales.",
+    "servicios": [
+      {
+        "nombre": "Iluminación",
+        "icon": "<i class=\"fa-solid fa-lightbulb\"></i>"
+      }
+    ]
+  },
+
+  {
+    "id": 40,
+    "nombre": "Básquet El Chañar 1",
+    "tipo": "BASQUET",
+    "ubicacion": "San Patricio del Chañar",
+    "lat": -38.5925,
+    "lng": -68.3648,
+    "imagen": "basquet.png",
+    "descripcion": "Cancha municipal simple.",
+    "servicios": [
+      {
+        "nombre": "Vestuarios",
+        "icon": "<i class=\"fa-solid fa-user-alt\"></i>"
+      }
+    ]
+  },
+
+  {
+    "id": 41,
+    "nombre": "Básquet El Chañar 2",
+    "tipo": "BASQUET",
+    "ubicacion": "San Patricio del Chañar",
+    "lat": -38.5921,
+    "lng": -68.3659,
+    "imagen": "basquet.png",
+    "descripcion": "Techada y con iluminación LED.",
+    "servicios": [
+      {
+        "nombre": "Iluminación",
+        "icon": "<i class=\"fa-solid fa-lightbulb\"></i>"
+      }
+    ]
+  },
+
+  {
+    "id": 42,
+    "nombre": "Básquet Megadeportes 1",
+    "tipo": "BASQUET",
+    "ubicacion": "Cipolletti, Megadeportes",
+    "lat": -38.9369,
+    "lng": -68.0081,
+    "imagen": "basquet.png",
+    "descripcion": "Superficie flotante nueva.",
+    "servicios": [
+      {
+        "nombre": "Estacionamiento",
+        "icon": "<i class=\"fa-solid fa-car-side\"></i>"
+      }
+    ]
+  },
+
+  {
+    "id": 43,
+    "nombre": "Básquet Megadeportes 2",
+    "tipo": "BASQUET",
+    "ubicacion": "Cipolletti, Megadeportes",
+    "lat": -38.9376,
+    "lng": -68.0091,
+    "imagen": "basquet.png",
+    "descripcion": "Con buffet y tribunas.",
+    "servicios": [
+      {
+        "nombre": "Buffet",
+        "icon": "<i class=\"fa-solid fa-drumstick-bite\"></i>"
+      },
+      { "nombre": "Tribunas", "icon": "<i class=\"fa-solid fa-chair\"></i>" }
+    ]
+  },
+
+  {
+    "id": 44,
+    "nombre": "Básquet Norte 1",
+    "tipo": "BASQUET",
+    "ubicacion": "Neuquén, Zona Norte",
+    "lat": -38.9138,
+    "lng": -68.0864,
+    "imagen": "basquet.png",
+    "descripcion": "Cancha de barrio con iluminación.",
+    "servicios": [
+      {
+        "nombre": "Iluminación",
+        "icon": "<i class=\"fa-solid fa-lightbulb\"></i>"
+      }
+    ]
+  },
+
+  {
+    "id": 45,
+    "nombre": "Básquet Norte 2",
+    "tipo": "BASQUET",
+    "ubicacion": "Neuquén, Zona Norte",
+    "lat": -38.9145,
+    "lng": -68.0879,
+    "imagen": "basquet.png",
+    "descripcion": "Cancha municipal techada.",
+    "servicios": [
+      {
+        "nombre": "Estacionamiento",
+        "icon": "<i class=\"fa-solid fa-car-side\"></i>"
+      }
+    ]
+  },
+
+  {
+    "id": 46,
+    "nombre": "Básquet Rincón 1",
+    "tipo": "BASQUET",
+    "ubicacion": "Rincón de los Sauces",
+    "lat": -38.8278,
+    "lng": -68.0471,
+    "imagen": "basquet.png",
+    "descripcion": "Piso vinílico con tableros profesionales.",
+    "servicios": [
+      {
+        "nombre": "Vestuarios",
+        "icon": "<i class=\"fa-solid fa-user-alt\"></i>"
+      }
+    ]
+  },
+
+  {
+    "id": 47,
+    "nombre": "Básquet Rincón 2",
+    "tipo": "BASQUET",
+    "ubicacion": "Rincón de los Sauces",
+    "lat": -38.8283,
+    "lng": -68.0482,
+    "imagen": "basquet.png",
+    "descripcion": "Iluminación LED nueva.",
+    "servicios": [
+      {
+        "nombre": "Iluminación",
+        "icon": "<i class=\"fa-solid fa-lightbulb\"></i>"
+      }
+    ]
+  },
+
+  {
+    "id": 48,
+    "nombre": "Básquet Rincón 3",
+    "tipo": "BASQUET",
+    "ubicacion": "Rincón de los Sauces",
+    "lat": -38.8274,
+    "lng": -68.0464,
+    "imagen": "basquet.png",
+    "descripcion": "Cancha techada con tribunas.",
+    "servicios": [
+      { "nombre": "Tribunas", "icon": "<i class=\"fa-solid fa-chair\"></i>" }
     ]
   }
 ]

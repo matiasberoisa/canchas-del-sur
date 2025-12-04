@@ -290,3 +290,50 @@ h2 {
 p {
   text-align: center;
 }
+
+/* Paginación */
+#paginacion {
+  display: flex;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+.pagination {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.pagination button {
+  background-color: #FFFFFF;
+  border: 1px solid #222222;
+  border-radius: 8px;
+  color: #000000;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 10px 15px;
+  transition: all 0.2s;
+  min-width: 40px;
+}
+
+.pagination button:hover {
+  background-color: #F7F7F7;
+  transform: scale(1.05);
+}
+
+.pagination button.active {
+  background-color: rgb(2, 133, 65);
+  color: white;
+  border-color: rgb(2, 133, 65);
+}
+
+.pagination button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.pagination .dots {
+  padding: 0 5px;
+  color: #666;
+}

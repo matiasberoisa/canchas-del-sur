@@ -46,7 +46,8 @@ export class Cancha {
     };
   }
   static async getById(id) {
-    const canchas = await this.getAll();
-    return canchas.data.find((cancha) => cancha.id === id);
+    const canchas = await read(PATH);
+    const cancha = canchas.find((cancha) => cancha.id === id);
+    return cancha;
   }
 }

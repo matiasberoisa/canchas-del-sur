@@ -18,7 +18,7 @@ function mostrarTiposCanchas(canchas) {
     const p = document.createElement("p");
 
     p.textContent = t.nombre;
-    img.src = `/api/canchas/download?nombreImg=${t.img}`;
+    img.src = `/api/canchas/download/${t.img}`;
     img.alt = t.nombre;
     img.dataset.original = t.imagen;
     sec.id = "canchaTipo";
